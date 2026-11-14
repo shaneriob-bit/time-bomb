@@ -2,13 +2,17 @@
 
 [ext_resource type="PackedScene" uid="uid://cufuprdic6u3s" path="res://_assets/time bomb.fbx" id="1_t7a87"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_rlvp2"]
-size = Vector3(0.16577148, 0.14746094, 0.42565918)
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_t7a87"]
+radius = 0.1
+height = 0.40478516
 
 [node name="TimeBomb" type="RigidBody3D" unique_id=999626019]
+collision_layer = 4
+collision_mask = 5
+continuous_cd = true
 
 [node name="time bomb" parent="." unique_id=318781164 instance=ExtResource("1_t7a87")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1748065124]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00030517578, 0.053466797, -0.03149414)
-shape = SubResource("BoxShape3D_rlvp2")
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.00030517578, 0.053466797, -0.005859375)
+shape = SubResource("CapsuleShape3D_t7a87")
