@@ -20,6 +20,8 @@ albedo_color = Color(0.080783345, 0.080783345, 0.080783345, 1)
 
 [node name="Main" type="Node" unique_id=358332163]
 script = ExtResource("1_x6rnu")
+throwable_scene = ExtResource("3_3q5j6")
+throw_force = 6.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=321811007]
 environment = SubResource("Environment_x6rnu")

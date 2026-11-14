@@ -28,6 +28,12 @@ func _unhandled_input(event: InputEvent) -> void:
 		look_dir = event.relative * 0.001
 		if mouse_captured: _rotate_camera()
 	if Input.is_action_just_pressed(&"exit"): get_tree().quit()
+	
+	if Input.is_action_just_pressed("pause"):
+		if mouse_captured:
+			release_mouse()
+		else:
+			capture_mouse()
 
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed(&"jump"): jumping = true
@@ -72,3 +78,4 @@ func _jump(delta: float) -> Vector3:
 		return jump_vel
 	jump_vel = Vector3.ZERO if is_on_floor() or is_on_ceiling_only() else jump_vel.move_toward(Vector3.ZERO, gravity * delta)
 	return jump_vel
+	
