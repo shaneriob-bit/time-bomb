@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://brf6wpua82egr"]
+
+[ext_resource type="PackedScene" uid="uid://b1573jkv2xegu" path="res://_assets/mesh/whiteboard1.fbx" id="1_khrvy"]
+[ext_resource type="Material" uid="uid://c2eh8y5nypgxl" path="res://_assets/materials/posters.tres" id="2_khrvy"]
+[ext_resource type="Material" uid="uid://b17fa82fd2gjd" path="res://_assets/materials/office furniture.tres" id="3_sopsf"]
+
+[node name="whiteboard1" unique_id=1470820301 instance=ExtResource("1_khrvy")]
+
+[node name="whiteboard" parent="." index="1" unique_id=350540217]
+surface_material_override/0 = ExtResource("2_khrvy")
+
+[node name="whiteboard stand" parent="." index="2" unique_id=715579802]
+surface_material_override/0 = ExtResource("3_sopsf")

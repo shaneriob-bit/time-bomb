@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dumbp4hnsc6wq"]
+
+[ext_resource type="PackedScene" uid="uid://bbrne62cawgeh" path="res://_assets/mesh/filing cabinet.fbx" id="1_mhvib"]
+[ext_resource type="Material" uid="uid://b17fa82fd2gjd" path="res://_assets/materials/office furniture.tres" id="2_l1vpe"]
+
+[node name="filing cabinet" unique_id=1528820851 instance=ExtResource("1_mhvib")]
+
+[node name="filing cabinet" parent="." index="1" unique_id=1918629227]
+surface_material_override/0 = ExtResource("2_l1vpe")

@@ -25,7 +25,7 @@ func _ready() -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
-		look_dir = event.relative * 0.001
+		look_dir = event.relative * 0.01
 		if mouse_captured: _rotate_camera()
 	if Input.is_action_just_pressed(&"exit"): get_tree().quit()
 

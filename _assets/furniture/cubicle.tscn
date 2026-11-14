@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://dcjl1x0yu8hpn"]
+
+[ext_resource type="PackedScene" uid="uid://ptnyprrnop6d" path="res://_assets/mesh/cubicle.fbx" id="1_jx2p3"]
+[ext_resource type="Material" uid="uid://b17fa82fd2gjd" path="res://_assets/materials/office furniture.tres" id="2_1hqin"]
+
+[node name="cubicle" unique_id=751615103 instance=ExtResource("1_jx2p3")]
+
+[node name="cubicle" parent="." index="1" unique_id=1688945235]
+surface_material_override/0 = ExtResource("2_1hqin")
+
+[node name="desk" parent="." index="2" unique_id=750437279]
+surface_material_override/0 = ExtResource("2_1hqin")
