@@ -1,18 +1,18 @@
 [gd_scene format=3 uid="uid://kondycbfl2yw"]
 
+[ext_resource type="PhysicsMaterial" uid="uid://b1doldir8oetj" path="res://_assets/dynamite.tres" id="1_gv20f"]
 [ext_resource type="PackedScene" uid="uid://cufuprdic6u3s" path="res://_assets/time bomb.fbx" id="1_t7a87"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_t7a87"]
-radius = 0.1
-height = 0.40478516
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_gv20f"]
+points = PackedVector3Array(-0.0802194, 0.031751394, -0.182673, 0.079890825, 0.065546274, 0.17122045, 0.075402535, 0.07638009, 0.17308648, -0.0802194, 0.031751394, 0.18507302, -0.036802694, 0.12901174, -0.16807604, 0.048246615, -0.0091264015, -0.16963826, -0.047888972, 0.12441885, 0.1722831, 0.04821748, 0.124282755, -0.16953464, -0.036825113, -0.013858166, 0.17057857, 0.048246615, -0.0091264015, 0.17203827, 0.037166543, 0.128861, 0.17011875, 0.07974021, 0.049651556, -0.16849905, -0.0802194, 0.08344543, -0.182673, -0.047918107, -0.009262498, -0.16998671, -0.0802194, 0.08344543, 0.18507302, 0.03718897, -0.013707425, -0.16782124, 0.075402535, 0.07638009, -0.17068647, 0.07527959, 0.038833268, 0.17280544, 0.04821748, 0.124282755, 0.17193465, -0.036825113, -0.013858166, -0.16817856, -0.036802694, 0.12901174, 0.17047605, 0.03718897, -0.013707425, 0.17022125, 0.037166543, 0.128861, -0.16771874, -0.047918107, -0.009262498, 0.17238672, -0.047888972, 0.12441885, -0.16988309, 0.07527959, 0.038833268, -0.17040543, 0.079890825, 0.065546274, -0.16882044, 0.07974021, 0.049651556, 0.17089906, 0.052451994, -0.002481388, 0.16838856, 0.052451994, -0.002481388, -0.16598855)
 
 [node name="TimeBomb" type="RigidBody3D" unique_id=999626019]
 collision_layer = 4
 collision_mask = 5
+physics_material_override = ExtResource("1_gv20f")
 continuous_cd = true
 
 [node name="time bomb" parent="." unique_id=318781164 instance=ExtResource("1_t7a87")]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1748065124]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.00030517578, 0.053466797, -0.005859375)
-shape = SubResource("CapsuleShape3D_t7a87")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2025908007]
+shape = SubResource("ConvexPolygonShape3D_gv20f")
