@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cdk6hwb4hi2wc" path="res://_player/player.tscn" id="1_dmym1"]
 [ext_resource type="Script" uid="uid://bd5r18ykgmiu6" path="res://_scripts/main.gd" id="1_x6rnu"]
+[ext_resource type="PackedScene" uid="uid://kondycbfl2yw" path="res://_scenes/time_bomb.tscn" id="3_3q5j6"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sa4u1"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -37,3 +38,35 @@ size = Vector3(32, 0.1, 32)
 [node name="Player" parent="." unique_id=1040660659 instance=ExtResource("1_dmym1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1376076, 1, 1.1284199)
 speed = 4.0
+
+[node name="TimeBomb" parent="." unique_id=999626019 instance=ExtResource("3_3q5j6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4475441, 0.35830688, 1.4503139)
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=2057979396]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=777992561]
+own_world_3d = true
+transparent_bg = true
+handle_input_locally = false
+msaa_3d = 1
+size = Vector2i(1152, 648)
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport" unique_id=1091639403]
+
+[node name="TimeBomb" parent="SubViewportContainer/SubViewport" unique_id=1959197130 instance=ExtResource("3_3q5j6")]
+transform = Transform3D(-0.43301275, 0.25000006, -0.8660254, 0.49999997, 0.86602545, 7.501453e-08, 0.75, -0.43301263, -0.50000006, 0.3, -0.3, -0.6)
+freeze = true
+freeze_mode = 1
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewportContainer/SubViewport" unique_id=1403076042]
+environment = SubResource("Environment_x6rnu")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport" unique_id=1249346988]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
