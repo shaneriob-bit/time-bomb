@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://b1ywdvdd58vqe"]
+
+[ext_resource type="PackedScene" uid="uid://cufuprdic6u3s" path="res://_assets/time bomb.fbx" id="1_lrfsr"]
+[ext_resource type="Texture2D" uid="uid://b2tuyqbsv0jot" path="res://_assets/texture images/bomb_tex_image.png" id="2_kpi0x"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h68uy"]
+cull_mode = 2
+albedo_texture = ExtResource("2_kpi0x")
+
+[node name="time bomb" unique_id=1668133157 instance=ExtResource("1_lrfsr")]
+
+[node name="watch face" parent="." index="1" unique_id=1840329474]
+surface_material_override/0 = SubResource("StandardMaterial3D_h68uy")

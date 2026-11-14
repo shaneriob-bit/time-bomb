@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bnil7ewoymwcy"]
+
+[ext_resource type="PackedScene" uid="uid://ehh5oh8o7vkg" path="res://_assets/mesh/banner.fbx" id="1_hsk08"]
+[ext_resource type="Material" uid="uid://c2eh8y5nypgxl" path="res://_assets/materials/posters.tres" id="2_n8mlk"]
+
+[node name="banner" unique_id=1516502555 instance=ExtResource("1_hsk08")]
+
+[node name="Plane" parent="." index="1" unique_id=375092954]
+surface_material_override/0 = ExtResource("2_n8mlk")
