@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://d0cieykev2lsi"]
+
+[ext_resource type="PackedScene" uid="uid://hd647paqjc3r" path="res://_assets/mesh/computer 2.fbx" id="1_sa7ev"]
+[ext_resource type="Material" uid="uid://b17fa82fd2gjd" path="res://_assets/materials/office furniture.tres" id="2_s2kyy"]
+
+[node name="computer 2" unique_id=568535668 instance=ExtResource("1_sa7ev")]
+
+[node name="Cube_005" parent="." index="0" unique_id=1491300930]
+surface_material_override/0 = ExtResource("2_s2kyy")
+
+[node name="Cube_006" parent="." index="1" unique_id=509270099]
+surface_material_override/0 = ExtResource("2_s2kyy")
+
+[node name="Cube_007" parent="." index="2" unique_id=1884315317]
+surface_material_override/0 = ExtResource("2_s2kyy")

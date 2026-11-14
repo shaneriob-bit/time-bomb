@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://b1x6c0nbfgffu"]
+
+[ext_resource type="PackedScene" uid="uid://btw62ucad37u" path="res://_assets/mesh/chair.fbx" id="1_jq3nh"]
+[ext_resource type="Material" uid="uid://b17fa82fd2gjd" path="res://_assets/materials/office furniture.tres" id="2_cmr38"]
+
+[node name="chair" unique_id=549250531 instance=ExtResource("1_jq3nh")]
+
+[node name="Cube_002" parent="." index="0" unique_id=1729895156]
+surface_material_override/0 = ExtResource("2_cmr38")
+
+[node name="Cube_003" parent="." index="1" unique_id=643815952]
+surface_material_override/0 = ExtResource("2_cmr38")
+
+[node name="Cube_004" parent="." index="2" unique_id=716441514]
+surface_material_override/0 = ExtResource("2_cmr38")

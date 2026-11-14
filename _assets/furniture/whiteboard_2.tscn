@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://ca7e67ll3tkxv"]
+
+[ext_resource type="PackedScene" uid="uid://bekbtg87jcmj7" path="res://_assets/mesh/whiteboard2.fbx" id="1_83kp2"]
+[ext_resource type="Texture2D" uid="uid://b1dncarxqtr0l" path="res://_assets/texture images/posters.png" id="2_83kp2"]
+[ext_resource type="Material" uid="uid://b17fa82fd2gjd" path="res://_assets/materials/office furniture.tres" id="3_bqfsd"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wsw7j"]
+cull_mode = 2
+albedo_texture = ExtResource("2_83kp2")
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_83kp2"]
+points = PackedVector3Array(-0.010946825, -0.003745376, 0.0019562654, 0.010773808, 0.0011889576, 0.033543732, 0.010773808, -0.0012778467, 0.033543732, -0.010946825, 0.0011889576, 0.033543732, 0.010773808, 0.0036564867, 0.0019562654, 0.010773808, -0.003745376, 0.0019562654, -0.010946825, 0.0036564867, 0.0019562654, -0.010946825, -0.0012778467, 0.033543732, 0.010773808, 0.0036564867, 0.003437315, -0.010946825, -0.003745376, 0.0029456932, -0.010946825, 0.0036564867, 0.003437315, 0.010773808, -0.003745376, 0.0029456932)
+
+[node name="whiteboard2" unique_id=1212841166 instance=ExtResource("1_83kp2")]
+
+[node name="whiteboard" parent="." index="1" unique_id=1939804070]
+surface_material_override/0 = SubResource("StandardMaterial3D_wsw7j")
+
+[node name="whiteboard stand" parent="." index="2" unique_id=759885944]
+surface_material_override/0 = ExtResource("3_bqfsd")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="3" unique_id=2068733873]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=277245223]
+transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, -1.4210855e-14, 0, 1.4210855e-14, 1.0000001, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_83kp2")

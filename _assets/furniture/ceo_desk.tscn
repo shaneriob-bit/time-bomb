@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://db2wyudlsebmr"]
+
+[ext_resource type="PackedScene" uid="uid://ckbt8q4jnhaqr" path="res://_assets/mesh/ceo desk.fbx" id="1_wn0e4"]
+[ext_resource type="Material" uid="uid://b17fa82fd2gjd" path="res://_assets/materials/office furniture.tres" id="2_8tpr5"]
+
+[node name="ceo desk" unique_id=1146407890 instance=ExtResource("1_wn0e4")]
+
+[node name="ceo desk" parent="." index="1" unique_id=669419191]
+surface_material_override/0 = ExtResource("2_8tpr5")

@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://btrb6j6ujva8u"]
+
+[ext_resource type="PackedScene" uid="uid://c4e3w32gj43h" path="res://_assets/mesh/fancy chair.fbx" id="1_fqc38"]
+[ext_resource type="Material" uid="uid://b17fa82fd2gjd" path="res://_assets/materials/office furniture.tres" id="2_lc05u"]
+
+[node name="fancy chair" unique_id=1497210228 instance=ExtResource("1_fqc38")]
+
+[node name="fancy chair" parent="." index="1" unique_id=813663407]
+surface_material_override/0 = ExtResource("2_lc05u")
