@@ -15,6 +15,9 @@ sky_material = SubResource("ProceduralSkyMaterial_fasvp")
 background_mode = 1
 sky = SubResource("Sky_tcb7q")
 
+[sub_resource type="LabelSettings" id="LabelSettings_nw23d"]
+font_size = 28
+
 [sub_resource type="LabelSettings" id="LabelSettings_fasvp"]
 line_spacing = 0.0
 font_size = 93
@@ -33,25 +36,63 @@ transform = Transform3D(-0.30169705, 0.06991596, -0.43625185, 0.12078128, 0.5211
 [node name="Camera3D" type="Camera3D" parent="." unique_id=381113896]
 transform = Transform3D(0.99843884, 0.0027849851, -0.055787083, 0, 0.99875623, 0.0498596, 0.055856556, -0.049781755, 0.997197, -2.5916538, 1.7549986, 0.84519696)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2000228487]
+[node name="canvas2" type="CanvasLayer" parent="." unique_id=692908818]
+unique_name_in_owner = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer" unique_id=961229020]
+[node name="VBoxContainer" type="VBoxContainer" parent="canvas2" unique_id=2001421867]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 62.0
+offset_top = -149.5
+offset_right = 462.0
+offset_bottom = 143.5
+grow_vertical = 2
+theme_override_constants/separation = 33
+
+[node name="dialogue" type="Label" parent="canvas2/VBoxContainer" unique_id=828667375]
+unique_name_in_owner = true
+custom_maximum_size = Vector2(400, -1)
+layout_mode = 2
+text = "< Anomolous activity detected in area. >
+< Help arrives in 5 MINUTES. >
+< Do not lose track of the TIME BOMBS. >"
+label_settings = SubResource("LabelSettings_nw23d")
+autowrap_mode = 2
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="acknowledge" type="Button" parent="canvas2/VBoxContainer" unique_id=8403230]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+text = "Acknowledge"
+
+[node name="texttimer" type="Timer" parent="canvas2" unique_id=276793997]
+unique_name_in_owner = true
+wait_time = 0.05
+
+[node name="canvas1" type="CanvasLayer" parent="." unique_id=2000228487]
+unique_name_in_owner = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="canvas1" unique_id=961229020]
 offset_left = 91.0
 offset_top = 87.0
 offset_right = 131.0
 offset_bottom = 127.0
 theme_override_constants/separation = 41
 
-[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer" unique_id=2146229285]
+[node name="Label" type="Label" parent="canvas1/VBoxContainer" unique_id=2146229285]
 layout_mode = 2
 text = "TIME 
 BOMB"
 label_settings = SubResource("LabelSettings_fasvp")
 
-[node name="start" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=1935815129]
+[node name="start" type="Button" parent="canvas1/VBoxContainer" unique_id=1935815129]
 unique_name_in_owner = true
 layout_mode = 2
-text = "begin"
+theme_override_font_sizes/font_size = 23
+text = "New Game"
 
 [node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=1573318211]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -2.1422553, 2.6756377, -0.016937971)
@@ -66,4 +107,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.036215, 1.422406, 0.945037
 light_color = Color(0.74509805, 0.62352943, 1, 1)
 shadow_enabled = true
 
-[connection signal="pressed" from="CanvasLayer/VBoxContainer/start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="canvas2/VBoxContainer/acknowledge" to="." method="_on_acknowledge_pressed"]
+[connection signal="pressed" from="canvas1/VBoxContainer/start" to="." method="_on_start_pressed"]

@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://btol6us4pyqn3" path="res://_scenes/hiding_spot.tscn" id="5_ce27d"]
 [ext_resource type="PackedScene" uid="uid://c5nedhii8d1cg" path="res://_assets/furniture/clock.tscn" id="6_ce27d"]
 [ext_resource type="AudioStream" uid="uid://6v3r2cg7v4i3" path="res://_assets/audio/ticking.wav" id="8_hi6yo"]
+[ext_resource type="PackedScene" uid="uid://1uqmppr5lo2b" path="res://_scenes/bomb_disappear.tscn" id="8_hi6yo"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v4k5x"]
 albedo_color = Color(0.080783345, 0.080783345, 0.080783345, 1)
@@ -238,6 +239,8 @@ autostart = true
 stream = ExtResource("8_hi6yo")
 volume_db = 2.985
 autoplay = true
+[node name="bomb_disappear" parent="." unique_id=329719938 instance=ExtResource("8_hi6yo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.422329, 0.049999952, -1.2592056)
 
 [connection signal="child_entered_tree" from="." to="." method="_on_child_entered_tree"]
 [connection signal="timeout" from="DisappearTimer" to="." method="_on_disappear_timer_timeout"]
