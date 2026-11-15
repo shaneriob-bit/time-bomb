@@ -41,7 +41,8 @@ func _process(delta):
 	timesincestart += delta
 	survival.text = ("0" if timesincestart < 540 else "") + str(int(timesincestart/60)) + ":" + ("0" if int(timesincestart) % 60 < 10 else "") + str(int(timesincestart) % 60)
 	if timesincestart >= 300:
-		pass
+		player.release_mouse()
+		get_tree().change_scene_to_file("res://_scenes/win.tscn")
 		
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -124,6 +125,7 @@ func _on_death(node):
 
 		await get_tree().physics_frame
 		$HUD/ColorRect.visible = true
+		%explosion.play()
 		%AnimationPlayer.play("fade_white")
 		await %AnimationPlayer.animation_finished
 		Globals.finaltime = timesincestart
