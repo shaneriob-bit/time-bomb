@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://7dr1i4d0wjuo"]
+
+[ext_resource type="PackedScene" uid="uid://cu5aheryvktts" path="res://_assets/mesh/Prop_Geekbar.glb" id="1_lay1f"]
+[ext_resource type="Texture2D" uid="uid://bgb0aoqj5cftv" path="res://_assets/texture images/Props_Texture.png" id="2_aelri"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_lay1f"]
+points = PackedVector3Array(-0.092, 0.016952395, -0.19131458, 0.092, 0.6369027, 0.23418543, 0.047934916, 0.7713841, 0.23263371, 0.092, 0.6369027, -0.19472829, 0.092, 0.011047602, 0.23418543, -0.092, 0.63284516, 0.23077172, -0.092, 0.63284516, -0.19131458, 0.092, 0.011047602, -0.19472829, -0.092, 0.016952395, 0.23077172, -0.049411114, 0.7713841, 0.08658369, -0.049411114, 0.7713841, 0.23263371, 0.047934916, 0.7713841, 0.08658369)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5bvux"]
+albedo_texture = ExtResource("2_aelri")
+
+[node name="Prop_Geekbar" unique_id=859772520 instance=ExtResource("1_lay1f")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="0" unique_id=539692965]
+transform = Transform3D(0.80837613, 0, 0, 0, 0.80837613, 0, 0, 0, 0.80837613, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=525426669]
+shape = SubResource("ConvexPolygonShape3D_lay1f")
+
+[node name="geek bar" parent="." index="1" unique_id=1257815347]
+surface_material_override/0 = SubResource("StandardMaterial3D_5bvux")

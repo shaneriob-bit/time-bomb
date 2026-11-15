@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://dlvtul6tglw04"]
+
+[ext_resource type="PackedScene" uid="uid://ck0cyeim3fy1c" path="res://_assets/mesh/poster 4.fbx" id="1_7gnrp"]
+[ext_resource type="Material" uid="uid://c2eh8y5nypgxl" path="res://_assets/materials/posters.tres" id="2_2dl4w"]
+[ext_resource type="Material" uid="uid://b17fa82fd2gjd" path="res://_assets/materials/office furniture.tres" id="3_lfw3j"]
+
+[node name="poster 4" unique_id=194734500 instance=ExtResource("1_7gnrp")]
+
+[node name="poster 4" parent="." index="1" unique_id=904792619]
+surface_material_override/0 = ExtResource("2_2dl4w")
+surface_material_override/1 = ExtResource("3_lfw3j")

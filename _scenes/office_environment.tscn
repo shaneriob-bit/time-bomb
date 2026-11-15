@@ -27,6 +27,10 @@
 [ext_resource type="PackedScene" uid="uid://sm7x6cqkb645" path="res://_assets/furniture/printer.tscn" id="25_6g5g3"]
 [ext_resource type="PackedScene" uid="uid://dfmdpt6m3sy1j" path="res://_assets/furniture/sink.tscn" id="26_fq5gb"]
 [ext_resource type="PackedScene" uid="uid://d3dmuj1o6ahtf" path="res://_assets/furniture/shelf.tscn" id="27_lvg1n"]
+[ext_resource type="PackedScene" uid="uid://r3lphgftlxhp" path="res://_assets/furniture/whiteboard_3.tscn" id="28_akpt8"]
+[ext_resource type="PackedScene" uid="uid://dlvtul6tglw04" path="res://_assets/furniture/poster_4.tscn" id="29_kokwd"]
+[ext_resource type="PackedScene" uid="uid://dat5o6wvrd1e8" path="res://_assets/furniture/poster_3.tscn" id="30_kokwd"]
+[ext_resource type="PackedScene" uid="uid://7dr1i4d0wjuo" path="res://_assets/furniture/prop_geekbar.tscn" id="31_hjlrp"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nw23d"]
 albedo_texture = ExtResource("2_rvl3o")
@@ -242,9 +246,6 @@ transform = Transform3D(-0.035500765, 0, 0.9993696, 0, 1, 0, -0.9993696, 0, -0.0
 
 [node name="whiteboard2" parent="." unique_id=1212841166 instance=ExtResource("9_k4iku")]
 transform = Transform3D(0.2153888, 0, 0.97652835, 0, 1, 0, -0.97652835, 0, 0.2153888, 11.582138, -0.1781019, 5.167062)
-
-[node name="whiteboard3" parent="." unique_id=1715632210 instance=ExtResource("9_k4iku")]
-transform = Transform3D(0.9874523, 0, -0.1579172, 0, 1, 0, 0.1579172, 0, 0.9874523, 2.5904572, -0.23508388, -21.596985)
 
 [node name="chair" parent="." unique_id=864929946 instance=ExtResource("6_xqapx")]
 transform = Transform3D(0.95570576, 0, 0.2943238, 0, 1, 0, -0.2943238, 0, 0.95570576, -7.051837, -0.18855429, 16.314322)
@@ -625,3 +626,24 @@ transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 7.25
 
 [node name="computer 1" parent="." unique_id=1483247321 instance=ExtResource("14_6tqmf")]
 transform = Transform3D(0.49999997, 0, -0.86602545, 0, 1, 0, 0.86602545, 0, 0.49999997, -9.560781, 1.1456834, -15.2428665)
+
+[node name="whiteboard 3" parent="." unique_id=1091123158 instance=ExtResource("28_akpt8")]
+transform = Transform3D(0.9760873, 0, -0.21737905, 0, 1, 0, 0.21737905, 0, 0.9760873, 2.948581, -0.19157428, -21.211515)
+
+[node name="poster 5" parent="." unique_id=194734500 instance=ExtResource("29_kokwd")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -15.297842, 1.7280158, -14.97377)
+
+[node name="poster 6" parent="." unique_id=581508999 instance=ExtResource("29_kokwd")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 3.5467792, 1.99542, 27.239449)
+
+[node name="poster 7" parent="." unique_id=1494427520 instance=ExtResource("30_kokwd")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -8.490705, 1.9336407, 8.676058)
+
+[node name="poster 8" parent="." unique_id=1050781670 instance=ExtResource("30_kokwd")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 4.283014, 1.5808208, 11.700784)
+
+[node name="poster 9" parent="." unique_id=472155795 instance=ExtResource("30_kokwd")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 14.197217, 2.094612, 22.422764)
+
+[node name="Prop_Geekbar2" parent="." unique_id=859772520 instance=ExtResource("31_hjlrp")]
+transform = Transform3D(-3.970278e-08, 0.9082937, -0.41833305, -1, -4.371139e-08, 0, -1.828592e-08, 0.41833305, 0.9082937, -9.739584, 1.2376317, 27.41821)

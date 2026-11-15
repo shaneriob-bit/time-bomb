@@ -3,7 +3,17 @@
 [ext_resource type="PackedScene" uid="uid://bh76mni047w85" path="res://_assets/mesh/alarm clock.fbx" id="1_tswsy"]
 [ext_resource type="Material" uid="uid://b17fa82fd2gjd" path="res://_assets/materials/office furniture.tres" id="2_i5sdn"]
 
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_tswsy"]
+points = PackedVector3Array(0.0034218438, 0.0019858724, 0.004375678, -0.0043682535, -0.0015682541, 3.1745993e-05, 0.0043682535, -0.0015682541, 3.1745993e-05, -0.004145992, 0.001505267, 0.00014634963, -0.0033666634, -0.0005359204, 0.00434195, 0.004145992, 0.001505267, 0.00014634963, -0.0038217942, 0.0019807252, 0.0039901687, 0.0033666634, -0.0005359204, 0.00434195, 0.004231425, -0.001431519, 0.0011239831, 0.0038217942, 0.0019807252, 0.0039901687, -0.0034218438, 0.0019858724, 0.004375678, -0.004231425, -0.001431519, 0.0011239831, 0.0043682535, 0.0015712414, 0.00057808496, -0.0043682535, 0.0015712414, 0.00057808496, 0.0043682535, -0.0015682541, 0.00044138997, -0.0039421916, -0.0009737733, 0.0023490814, 0.0039421916, -0.0009737733, 0.0023490814)
+
 [node name="alarm clock" unique_id=1625312352 instance=ExtResource("1_tswsy")]
 
-[node name="alarm clock" parent="." index="1" unique_id=1615111051]
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=1634924582]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=1695615721]
+transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, -1.4210855e-14, 0, 1.4210855e-14, 1.0000001, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_tswsy")
+
+[node name="alarm clock" parent="." index="2" unique_id=1615111051]
 surface_material_override/0 = ExtResource("2_i5sdn")
