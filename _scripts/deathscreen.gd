@@ -32,7 +32,7 @@ func _ready():
 	await $DeathTimer.timeout
 	
 	while(visible_characters <= text.length()):
-		$DeathTimer.start(0.1)
+		$DeathTimer.start(0.05)
 		await $DeathTimer.timeout
 		visible_characters += 1
 	
@@ -43,7 +43,7 @@ func _ready():
 	await $DeathTimer.timeout
 	
 	while(visible_characters <= text.length()):
-		$DeathTimer.start(0.1)
+		$DeathTimer.start(0.05)
 		await $DeathTimer.timeout
 		visible_characters += 1
 

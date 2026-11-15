@@ -5,6 +5,10 @@ extends RigidBody3D
 
 @onready var reverse: int = 1 # changes to -1 if reversing
 @onready var candie: bool = true
+
+@onready var ticking= preload("uid://6v3r2cg7v4i3")
+@onready var alarm = preload("uid://b8vgq1o3m1fdq")
+
 var main
 
 var on_screen : bool = false
@@ -27,11 +31,20 @@ func pickup(parent):
 	return self
 
 func _process(_delta):
-	if %model.progress >= 1 and candie:
-		candie = false
-		print("YOU JUST DIED")
-		death.emit(self)
-		%AnimationPlayer.play("die")
+	print(%AudioStreamPlayer3D.stream)
+	print(alarm)
+	if %model.progress >= 0.8:
+		if %AudioStreamPlayer3D.stream != alarm:
+			%AudioStreamPlayer3D.stream = alarm
+		if %model.progress >= 1 and candie:
+			candie = false
+			print("YOU JUST DIED")
+			death.emit(self)
+			%AnimationPlayer.play("die")
+	else:
+		if %AudioStreamPlayer3D.stream != ticking:
+			%AudioStreamPlayer3D.stream = ticking
+	
 
 func _on_visible_on_screen_notifier_3d_screen_entered() -> void:
 	on_screen = true
