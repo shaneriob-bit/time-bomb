@@ -19,6 +19,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		throw_object()
 		
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		player.capture_mouse()
 		var from = camera.project_ray_origin(event.position)
 		var to = from + camera.project_ray_normal(event.position) * RAY_LENGTH
 		

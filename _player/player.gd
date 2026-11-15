@@ -21,7 +21,8 @@ var jump_vel: Vector3 # Jumping velocity
 @onready var camera: Camera3D = $Camera
 
 func _ready() -> void:
-	capture_mouse()
+	#capture_mouse()
+	pass
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
@@ -34,6 +35,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			release_mouse()
 		else:
 			capture_mouse()
+
 
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed(&"jump"): jumping = true
