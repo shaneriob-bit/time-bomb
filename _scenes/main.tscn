@@ -5,20 +5,21 @@
 [ext_resource type="PackedScene" uid="uid://kondycbfl2yw" path="res://_scenes/time_bomb.tscn" id="3_3q5j6"]
 [ext_resource type="PackedScene" uid="uid://4lpag8t4s1ra" path="res://_scenes/office_environment.tscn" id="4_lavtb"]
 [ext_resource type="Texture2D" uid="uid://ca841hl8cvkd4" path="res://_assets/sprites/crosshair_small.png" id="5_6bnj4"]
+[ext_resource type="PackedScene" uid="uid://btol6us4pyqn3" path="res://_scenes/hiding_spot.tscn" id="5_ce27d"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v4k5x"]
 albedo_color = Color(0.080783345, 0.080783345, 0.080783345, 1)
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sa4u1"]
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6bnj4"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
 ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
 
-[sub_resource type="Sky" id="Sky_dmym1"]
-sky_material = SubResource("ProceduralSkyMaterial_sa4u1")
+[sub_resource type="Sky" id="Sky_cn47q"]
+sky_material = SubResource("ProceduralSkyMaterial_6bnj4")
 
-[sub_resource type="Environment" id="Environment_x6rnu"]
+[sub_resource type="Environment" id="Environment_ce27d"]
 background_mode = 2
-sky = SubResource("Sky_dmym1")
+sky = SubResource("Sky_cn47q")
 
 [node name="Main" type="Node" unique_id=358332163]
 script = ExtResource("1_x6rnu")
@@ -58,18 +59,43 @@ msaa_3d = 1
 size = Vector2i(1152, 648)
 render_target_update_mode = 4
 
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport" unique_id=491209231]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
 [node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport" unique_id=1091639403]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewportContainer/SubViewport" unique_id=1403076042]
-environment = SubResource("Environment_x6rnu")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport" unique_id=1249346988]
-transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+[node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewportContainer/SubViewport" unique_id=1725562987]
+environment = SubResource("Environment_ce27d")
 
 [node name="office_environment" parent="." unique_id=1981049581 instance=ExtResource("4_lavtb")]
 script = null
 
 [node name="HidingSpots" type="Node3D" parent="office_environment" unique_id=1074956599]
+
+[node name="HidingSpot" parent="office_environment/HidingSpots" unique_id=71082711 instance=ExtResource("5_ce27d")]
+transform = Transform3D(-0.7071067, 0, -0.7071068, 0, 1, 0, 0.7071068, 0, -0.7071067, -15, 0.031292193, 1)
+
+[node name="HidingSpot2" parent="office_environment/HidingSpots" unique_id=2056464426 instance=ExtResource("5_ce27d")]
+transform = Transform3D(-5.9604645e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -5.9604645e-08, -13, 0.6966034, 10)
+
+[node name="HidingSpot3" parent="office_environment/HidingSpots" unique_id=1278525959 instance=ExtResource("5_ce27d")]
+transform = Transform3D(0.9659257, 0, 0.25881907, 0, 1, 0, -0.25881907, 0, 0.9659257, -14.392492, 0.6941143, 8.104616)
+
+[node name="HidingSpot4" parent="office_environment/HidingSpots" unique_id=1950543802 instance=ExtResource("5_ce27d")]
+transform = Transform3D(0.9458182, 0, -0.32469633, 0, 1, 0, 0.32469633, 0, 0.9458182, -14.609272, 0.6941143, 5.120524)
+
+[node name="HidingSpot5" parent="office_environment/HidingSpots" unique_id=785892269 instance=ExtResource("5_ce27d")]
+transform = Transform3D(0.024128616, 0, 0.9997089, 0, 1, 0, -0.9997089, 0, 0.024128616, 0.036753207, 0.033390477, 12.792387)
+
+[node name="HidingSpot6" parent="office_environment/HidingSpots" unique_id=1787046684 instance=ExtResource("5_ce27d")]
+transform = Transform3D(0.69933254, 0, 0.71479654, 0, 1, 0, -0.71479654, 0, 0.69933254, -0.35629386, 0.033390477, 28.168257)
+
+[node name="HidingSpot7" parent="office_environment/HidingSpots" unique_id=611334275 instance=ExtResource("5_ce27d")]
+transform = Transform3D(0.8543817, 0, -0.5196461, 0, 1, 0, 0.5196461, 0, 0.8543817, 1.3839898, 0.033390477, 26.689491)
+
+[node name="HidingSpot8" parent="office_environment/HidingSpots" unique_id=636968290 instance=ExtResource("5_ce27d")]
+transform = Transform3D(0.8543817, 0, -0.5196461, 0, 1, 0, 0.5196461, 0, 0.8543817, 0.98781776, 0.7921649, 26.46385)
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=1985011821]
 

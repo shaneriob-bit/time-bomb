@@ -12,7 +12,7 @@ func _ready() -> void:
 
 var held_object = null
 
-const RAY_LENGTH = 10
+const RAY_LENGTH = 3
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("throw"): # Configure "throw" in Project Settings > Input Map
