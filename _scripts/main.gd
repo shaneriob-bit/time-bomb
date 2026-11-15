@@ -142,6 +142,10 @@ func is_bomb_too_close(pos : Vector3) -> bool:
 	
 func request_disappear(bomb : Node3D):
 	if can_disappear:
+		if Globals.showhint:
+			%somethinghappened.visible = true
+			%somethinghappened.get_node("AnimationPlayer").play("fadetext")
+			Globals.showhint = false
 		print("disappearing")
 		var found = false
 		var spot

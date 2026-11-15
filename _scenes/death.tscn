@@ -2,6 +2,7 @@
 
 [ext_resource type="Shader" uid="uid://b1aon4fnss32k" path="res://_scripts/death.gdshader" id="1_7ag0t"]
 [ext_resource type="Script" uid="uid://d17itkkehbtex" path="res://_scripts/deathscreen.gd" id="2_eqp8a"]
+[ext_resource type="AudioStream" uid="uid://bk086wj1q244q" path="res://_assets/audio/kaydence loser.mp3" id="2_gcids"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ia55b"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -90,6 +91,11 @@ current = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.056205)
 size = Vector3(26.800537, 12.875244, 1)
 material = SubResource("ShaderMaterial_ia55b")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1415501544]
+stream = ExtResource("2_gcids")
+volume_db = -10.0
+autoplay = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1871822503]
 
