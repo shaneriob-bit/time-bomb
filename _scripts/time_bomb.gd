@@ -60,7 +60,7 @@ func _on_disappear_timer_timeout() -> void:
 
 func disappear():
 	# is it off screen, not being held and also not already moved?
-	if not on_screen and get_parent() == main and not freeze:
+	if get_parent() == main and not freeze == true:
 		if main.request_disappear(self):
 			freeze = true
 	
