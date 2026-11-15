@@ -3,7 +3,17 @@
 [ext_resource type="PackedScene" uid="uid://cl6q1byqvvhr2" path="res://_assets/mesh/microwave.fbx" id="1_b8dsg"]
 [ext_resource type="Material" uid="uid://b17fa82fd2gjd" path="res://_assets/materials/office furniture.tres" id="2_y30sh"]
 
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_b8dsg"]
+points = PackedVector3Array(0.012236335, 0.004625397, 0.012622746, -0.010987301, -0.0069873016, -0.0004873015, -0.010987301, -0.0069873016, 0.013373015, 0.012600614, -0.0067999996, -0.0002637475, -0.010236335, 0.004625397, -0.0004873015, 0.012600614, -0.0067999996, 0.013149462, 0.012236335, 0.004625397, -0.0004873015, -0.010236335, 0.004625397, 0.012622746, 0.0126118185, 0.0038751634, -0.0004873015, -0.010611818, 0.0005036618, -0.0004873015, 0.012408828, -0.0031402046, 0.013038586)
+
 [node name="microwave" unique_id=639307784 instance=ExtResource("1_b8dsg")]
 
-[node name="microwave" parent="." index="1" unique_id=1735440648]
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=1715364242]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=1912051470]
+transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, -1.4210855e-14, 0, 1.4210855e-14, 1.0000001, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_b8dsg")
+
+[node name="microwave" parent="." index="2" unique_id=1735440648]
 surface_material_override/0 = ExtResource("2_y30sh")

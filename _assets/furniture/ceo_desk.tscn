@@ -3,7 +3,16 @@
 [ext_resource type="PackedScene" uid="uid://ckbt8q4jnhaqr" path="res://_assets/mesh/ceo desk.fbx" id="1_wn0e4"]
 [ext_resource type="Material" uid="uid://b17fa82fd2gjd" path="res://_assets/materials/office furniture.tres" id="2_8tpr5"]
 
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_wn0e4"]
+points = PackedVector3Array(-0.022709558, -0.0084, 0.0015188447, 0.023859004, 0.0123, 0.014821485, 0.024030652, -0.0094, 0.014869755, 0.024109283, 0.0119872885, 0.0011124816, -0.023859004, 0.0123, 0.014821485, -0.024030652, -0.0094, 0.014869755, -0.024109283, 0.0119872885, 0.0011124816, 0.022709558, -0.0084, 0.0015188447, -0.024888888, -0.0097888885, 0.011997868, -0.024888888, 0.012766666, 0.011997868, 0.024888888, -0.0097888885, 0.011997868, 0.024888888, 0.012766666, 0.011997868)
+
 [node name="ceo desk" unique_id=1146407890 instance=ExtResource("1_wn0e4")]
 
 [node name="ceo desk" parent="." index="1" unique_id=669419191]
 surface_material_override/0 = ExtResource("2_8tpr5")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="2" unique_id=88518249]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=746242456]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_wn0e4")

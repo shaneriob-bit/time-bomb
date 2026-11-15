@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dlbpqb3wbs6dt" path="res://_scenes/office_layout.tscn" id="1_1gqtv"]
 [ext_resource type="PackedScene" uid="uid://cdk6hwb4hi2wc" path="res://_player/player.tscn" id="1_g4o3v"]
 [ext_resource type="Script" uid="uid://bd5r18ykgmiu6" path="res://_scripts/main.gd" id="1_iwrvy"]
+[ext_resource type="Texture2D" uid="uid://dk0dbyr1lg8i3" path="res://_assets/texture images/ceiling.png" id="2_rvl3o"]
 [ext_resource type="PackedScene" uid="uid://dcjl1x0yu8hpn" path="res://_assets/furniture/cubicle.tscn" id="3_cn47q"]
 [ext_resource type="PackedScene" uid="uid://d4htifhol8exq" path="res://_assets/furniture/counter.tscn" id="5_jaf24"]
 [ext_resource type="PackedScene" uid="uid://b1x6c0nbfgffu" path="res://_assets/furniture/chair.tscn" id="6_xqapx"]
@@ -19,6 +20,11 @@
 [ext_resource type="PackedScene" uid="uid://bnil7ewoymwcy" path="res://_assets/furniture/banner.tscn" id="17_tip21"]
 [ext_resource type="PackedScene" uid="uid://7qc0mgey1l88" path="res://_assets/furniture/poster_1.tscn" id="18_l0er2"]
 [ext_resource type="PackedScene" uid="uid://bsuwk4efkmcir" path="res://_assets/furniture/poster_2.tscn" id="19_vcc8o"]
+[ext_resource type="PackedScene" uid="uid://bwp58fve65wof" path="res://_assets/furniture/paper_stack.tscn" id="20_r7lvc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nw23d"]
+albedo_texture = ExtResource("2_rvl3o")
+uv1_triplanar = true
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_g4o3v"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -33,6 +39,13 @@ sky = SubResource("Sky_cn47q")
 
 [node name="office_environment" type="Node3D" unique_id=1981049581]
 script = ExtResource("1_iwrvy")
+
+[node name="_ceiling" type="CSGBox3D" parent="." unique_id=1014324123]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.883728, 6.3226376, 3.294033)
+cast_shadow = 0
+use_collision = true
+size = Vector3(39.55945, 0.17285156, 53.154297)
+material = SubResource("StandardMaterial3D_nw23d")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2124110082]
 environment = SubResource("Environment_iwrvy")
@@ -355,3 +368,33 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3.95
 
 [node name="whiteboard4" parent="." unique_id=1973889333 instance=ExtResource("9_k4iku")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.641622, 0.0051412582, 2.2889853)
+
+[node name="paper stack" parent="." unique_id=143729597 instance=ExtResource("20_r7lvc")]
+transform = Transform3D(0.9162257, 3.5822026e-08, -0.4006626, 0, -1, -8.940697e-08, -0.4006626, 8.191696e-08, -0.9162257, 5.370801, 1.4835162, 1.9550116)
+
+[node name="paper stack3" parent="." unique_id=998015609 instance=ExtResource("20_r7lvc")]
+transform = Transform3D(0.07576096, 8.9150014e-08, -0.997126, 0, -1, -8.940697e-08, -0.997126, 6.7735577e-09, -0.07576096, 5.370801, 1.5059061, 10.612843)
+
+[node name="paper stack6" parent="." unique_id=919417163 instance=ExtResource("20_r7lvc")]
+transform = Transform3D(-0.3936961, 8.2186524e-08, -0.91924065, 0, -1, -8.940697e-08, -0.91924065, -3.5199175e-08, 0.3936961, 13.683694, 1.335995, 16.44462)
+
+[node name="paper stack4" parent="." unique_id=1238268034 instance=ExtResource("20_r7lvc")]
+transform = Transform3D(-0.11868496, 8.877504e-08, -0.99293196, 0, -1, -8.940697e-08, -0.99293196, -1.0611263e-08, 0.11868496, 4.382861, 1.5059061, 10.612843)
+
+[node name="paper stack5" parent="." unique_id=2092602460 instance=ExtResource("20_r7lvc")]
+transform = Transform3D(-0.18489583, 1.7230934e-07, -0.9827581, -6.6232317e-09, 1, 1.7657848e-07, 0.9827581, 3.9157662e-08, -0.18489583, 3.159584, 1.1582954, 10.612843)
+
+[node name="paper stack7" parent="." unique_id=254773319 instance=ExtResource("20_r7lvc")]
+transform = Transform3D(0.8557957, -8.5678394e-08, 0.51731396, -6.6232317e-09, 1, 1.7657848e-07, -0.51731396, -1.545414e-07, 0.8557957, -9.848406, 1.2793896, -11.916888)
+
+[node name="paper stack8" parent="." unique_id=1074784366 instance=ExtResource("20_r7lvc")]
+transform = Transform3D(0.23072162, -2.3264933e-07, 0.9730197, 5.1848254e-08, -1, -2.513945e-07, 0.9730197, 1.08451516e-07, -0.23072162, -13.670157, 1.5555062, -4.1576295)
+
+[node name="paper stack9" parent="." unique_id=1608064155 instance=ExtResource("20_r7lvc")]
+transform = Transform3D(0.99475753, 2.5868466e-08, 0.10226129, 5.1848254e-08, -1, -2.513945e-07, 0.10226129, 2.5537867e-07, -0.99475753, -10.362375, 2.540029, 0.9149351)
+
+[node name="paper stack10" parent="." unique_id=825902962 instance=ExtResource("20_r7lvc")]
+transform = Transform3D(0.9723063, -8.3410825e-09, 0.23371002, 5.184825e-08, -1, -2.513945e-07, 0.23371002, 2.5654992e-07, -0.9723063, -10.362375, 2.8769479, 0.9149351)
+
+[node name="paper stack2" parent="." unique_id=920144788 instance=ExtResource("20_r7lvc")]
+transform = Transform3D(0.9841994, 1.583073e-08, -0.17706369, 0, -1, -8.940697e-08, -0.17706369, 8.799429e-08, -0.9841994, 5.370801, 1.8326244, 1.9550116)

@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bwp58fve65wof"]
+
+[ext_resource type="PackedScene" uid="uid://d1v8g7wcyxmi5" path="res://_assets/mesh/paper stack.fbx" id="1_h40p2"]
+[ext_resource type="Texture2D" uid="uid://bo610dglqfudd" path="res://_assets/texture images/office furniture.png" id="2_h40p2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nxsc4"]
+shading_mode = 0
+albedo_texture = ExtResource("2_h40p2")
+
+[node name="paper stack" unique_id=143729597 instance=ExtResource("1_h40p2")]
+
+[node name="paper stack" parent="." index="1" unique_id=497553174]
+surface_material_override/0 = SubResource("StandardMaterial3D_nxsc4")
