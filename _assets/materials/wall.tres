@@ -5,4 +5,5 @@
 [resource]
 albedo_texture = ExtResource("1_c66dx")
 uv1_scale = Vector3(0.149, 0.149, 0.149)
+uv1_offset = Vector3(0, 0.485, 0)
 uv1_triplanar = true
