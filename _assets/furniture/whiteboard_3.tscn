@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://r3lphgftlxhp"]
+
+[ext_resource type="PackedScene" uid="uid://dbsu7vd3x4mcb" path="res://_assets/mesh/whiteboard 3.fbx" id="1_f0jkr"]
+[ext_resource type="Material" uid="uid://b17fa82fd2gjd" path="res://_assets/materials/office furniture.tres" id="2_x0l4h"]
+[ext_resource type="Material" uid="uid://c2eh8y5nypgxl" path="res://_assets/materials/posters.tres" id="3_63ng8"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_f0jkr"]
+points = PackedVector3Array(-0.010946825, -0.003745376, 0.0019562654, 0.010773808, 0.0011889576, 0.033543732, 0.010773808, -0.0012778467, 0.033543732, -0.010946825, 0.0011889576, 0.033543732, 0.010773808, 0.0036564867, 0.0019562654, 0.010773808, -0.003745376, 0.0019562654, -0.010946825, 0.0036564867, 0.0019562654, -0.010946825, -0.0012778467, 0.033543732, 0.010773808, 0.0036564867, 0.003437315, -0.010946825, -0.003745376, 0.0029456932, -0.010946825, 0.0036564867, 0.003437315, 0.010773808, -0.003745376, 0.0029456932)
+
+[node name="whiteboard 3" unique_id=1091123158 instance=ExtResource("1_f0jkr")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=1667145000]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=939249887]
+transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, -1.4210855e-14, 0, 1.4210855e-14, 1.0000001, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_f0jkr")
+
+[node name="whiteboard stand_001" parent="." index="2" unique_id=1363619293]
+surface_material_override/0 = ExtResource("2_x0l4h")
+
+[node name="whiteboard_001" parent="." index="3" unique_id=190162688]
+surface_material_override/0 = ExtResource("3_63ng8")
