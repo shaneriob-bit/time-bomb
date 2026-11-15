@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://c3o01ran8hmnw"]
+
+[ext_resource type="PackedScene" uid="uid://dm4o4puw5pd0m" path="res://_assets/detector.fbx" id="1_ebrmf"]
+[ext_resource type="Material" uid="uid://b17fa82fd2gjd" path="res://_assets/materials/office furniture.tres" id="2_ilhng"]
+
+[node name="detector" unique_id=1913184095 instance=ExtResource("1_ebrmf")]
+
+[node name="Quadsphere" parent="." index="1" unique_id=446118957]
+surface_material_override/0 = ExtResource("2_ilhng")
+
+[node name="detector" parent="." index="2" unique_id=880874234]
+surface_material_override/0 = ExtResource("2_ilhng")
