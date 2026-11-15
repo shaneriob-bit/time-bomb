@@ -1,0 +1,126 @@
+[gd_scene format=3 uid="uid://cam4qylhbxqoh"]
+
+[ext_resource type="PackedScene" uid="uid://cdk6hwb4hi2wc" path="res://_player/player.tscn" id="1_dmym1"]
+[ext_resource type="Script" uid="uid://bd5r18ykgmiu6" path="res://_scripts/main.gd" id="1_x6rnu"]
+[ext_resource type="PackedScene" uid="uid://kondycbfl2yw" path="res://_scenes/time_bomb.tscn" id="3_3q5j6"]
+[ext_resource type="PackedScene" uid="uid://4lpag8t4s1ra" path="res://_scenes/office_environment.tscn" id="4_lavtb"]
+[ext_resource type="Texture2D" uid="uid://ca841hl8cvkd4" path="res://_assets/sprites/crosshair_small.png" id="5_6bnj4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v4k5x"]
+albedo_color = Color(0.080783345, 0.080783345, 0.080783345, 1)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_urak4"]
+rough = true
+bounce = 0.25
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sa4u1"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_dmym1"]
+sky_material = SubResource("ProceduralSkyMaterial_sa4u1")
+
+[sub_resource type="Environment" id="Environment_x6rnu"]
+background_mode = 2
+sky = SubResource("Sky_dmym1")
+
+[sub_resource type="LabelSettings" id="LabelSettings_nw23d"]
+font_size = 41
+
+[node name="Main" type="Node" unique_id=358332163]
+script = ExtResource("1_x6rnu")
+throwable_scene = ExtResource("3_3q5j6")
+throw_force = 6.0
+
+[node name="Level" type="Node3D" parent="." unique_id=2086153474]
+visible = false
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Level" unique_id=1624815159]
+material_override = SubResource("StandardMaterial3D_v4k5x")
+use_collision = true
+size = Vector3(32, 0.1, 32)
+
+[node name="Player" parent="." unique_id=1040660659 instance=ExtResource("1_dmym1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1376076, 1, 1.1284199)
+speed = 4.0
+
+[node name="TimeBomb" parent="." unique_id=999626019 instance=ExtResource("3_3q5j6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4475441, 0.35830688, 1.4503139)
+physics_material_override = SubResource("PhysicsMaterial_urak4")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=2057979396]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+accessibility_region = true
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=777992561]
+own_world_3d = true
+transparent_bg = true
+handle_input_locally = false
+msaa_3d = 1
+size = Vector2i(1152, 648)
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport" unique_id=1091639403]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewportContainer/SubViewport" unique_id=1403076042]
+environment = SubResource("Environment_x6rnu")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport" unique_id=1249346988]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+
+[node name="office_environment" parent="." unique_id=1981049581 instance=ExtResource("4_lavtb")]
+script = null
+
+[node name="HidingSpots" type="Node3D" parent="office_environment" unique_id=1074956599]
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1985011821]
+
+[node name="rewind" type="Label" parent="HUD" unique_id=245944596]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -65.0
+offset_top = -72.0
+offset_right = 65.0
+offset_bottom = -49.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "[E] Rewind bomb"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="HUD" unique_id=1387086398]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+mouse_filter = 2
+texture = ExtResource("5_6bnj4")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="survival" type="Label" parent="HUD" unique_id=2069651532]
+offset_left = 27.0
+offset_top = 21.0
+offset_right = 216.0
+offset_bottom = 90.0
+text = "00:00"
+label_settings = SubResource("LabelSettings_nw23d")

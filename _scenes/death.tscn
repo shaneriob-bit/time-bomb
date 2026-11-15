@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dgsac3hf6oavq"]
 
-[ext_resource type="Shader" uid="uid://b1aon4fnss32k" path="res://_scenes/death.gdshader" id="1_7ag0t"]
+[ext_resource type="Shader" uid="uid://b1aon4fnss32k" path="res://_scripts/death.gdshader" id="1_7ag0t"]
 [ext_resource type="Script" uid="uid://d17itkkehbtex" path="res://_scripts/deathscreen.gd" id="2_eqp8a"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ia55b"]
@@ -50,8 +50,8 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_gcids"]
-resource_name = "fade up"
-length = 0.8
+resource_name = "fade"
+length = 1.7333333
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -59,16 +59,16 @@ tracks/0/path = NodePath(".:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.8),
+"times": PackedFloat32Array(0, 1.6333333),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_81c5p"]
 _data = {
 &"RESET": SubResource("Animation_eqp8a"),
-&"fade up": SubResource("Animation_gcids")
+&"fade": SubResource("Animation_gcids")
 }
 
 [node name="death" type="Node3D" unique_id=26096098]
@@ -107,11 +107,13 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 text = "You
-Died"
+Died
+
+You Lasted"
 label_settings = SubResource("LabelSettings_7ag0t")
 horizontal_alignment = 1
 vertical_alignment = 1
-visible_characters = 8
+visible_characters = 20
 script = ExtResource("2_eqp8a")
 
 [node name="DeathTimer" type="Timer" parent="CanvasLayer/Label" unique_id=1811273702]
@@ -130,4 +132,23 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/ColorRect" unique_id=1491999550]
+unique_name_in_owner = true
 libraries/ = SubResource("AnimationLibrary_81c5p")
+
+[node name="Button" type="Button" parent="CanvasLayer" unique_id=730085959]
+unique_name_in_owner = true
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.73200005
+anchor_right = 0.5
+anchor_bottom = 0.73200005
+offset_left = -62.0
+offset_top = -27.33603
+offset_right = 62.0
+offset_bottom = 26.66397
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 33
+text = "Restart"

@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://din5nlhsfhaed"]
+
+[ext_resource type="PackedScene" uid="uid://cs2oawq2gra7l" path="res://_assets/mesh/basket.fbx" id="1_feun0"]
+[ext_resource type="Material" uid="uid://b17fa82fd2gjd" path="res://_assets/materials/office furniture.tres" id="2_v7tp8"]
+
+[node name="basket" unique_id=921610191 instance=ExtResource("1_feun0")]
+
+[node name="Cube_011" parent="." index="0" unique_id=1613459923]
+surface_material_override/0 = ExtResource("2_v7tp8")

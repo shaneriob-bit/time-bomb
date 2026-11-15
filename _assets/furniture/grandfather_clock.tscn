@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cse2ed2ktgwh2"]
+
+[ext_resource type="PackedScene" uid="uid://d06nna1fnm0wv" path="res://_assets/mesh/grandfather clock.fbx" id="1_lem77"]
+[ext_resource type="Material" uid="uid://b17fa82fd2gjd" path="res://_assets/materials/office furniture.tres" id="2_aljij"]
+[ext_resource type="AudioStream" uid="uid://cdotab08tcyh0" path="res://_assets/audio/large clock.wav" id="3_aljij"]
+
+[node name="grandfather clock" unique_id=279738597 instance=ExtResource("1_lem77")]
+
+[node name="grandfather clock" parent="." index="1" unique_id=1036981210]
+surface_material_override/0 = ExtResource("2_aljij")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="2" unique_id=273050546]
+stream = ExtResource("3_aljij")
+volume_db = 1.791
+unit_size = 2.0
+autoplay = true

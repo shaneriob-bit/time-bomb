@@ -2,6 +2,10 @@ extends Node
 
 @onready var player = $Player
 
+@onready var timesincestart: float = 0
+@onready var survival: Label = $HUD/survival
+@export var office_environment: Node3D
+
 
 func _ready() -> void:
 	camera = player.get_node("Camera")
@@ -13,6 +17,10 @@ func _ready() -> void:
 var held_object = null
 
 const RAY_LENGTH = 3
+
+func _process(delta):
+	timesincestart += delta
+	survival.text = ("0" if timesincestart < 540 else "") + str(int(timesincestart/60)) + ":" + ("0" if int(timesincestart) % 60 < 10 else "") + str(int(timesincestart) % 60)
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("throw"): # Configure "throw" in Project Settings > Input Map
@@ -33,14 +41,26 @@ func _unhandled_input(event: InputEvent) -> void:
 			print(collision_object.name)
 			if collision_object is RigidBody3D and collision_object.name == "TimeBomb":
 				held_object = collision_object.pickup($SubViewportContainer.get_node("SubViewport"))
-
+				%rewind.visible = true
+	
+	if event.is_action_pressed("rewind"):
+		if held_object:
+			held_object.reverse = -3
+	if event.is_action_released("rewind"):
+		if held_object:
+			held_object.reverse = 1
+	
 func throw_object() -> void:
 	if not throwable_scene:
 		return
 		
 	if not held_object:
 		return
-
+	
+	# just in case :p
+	held_object.reverse = 1
+	%rewind.visible = false
+	
 	# Instance the rigid body object
 	var instance: RigidBody3D = held_object
 	instance.reparent(get_tree().current_scene)
@@ -59,4 +79,22 @@ func throw_object() -> void:
 	# Apply a central impulse along the look vector
 	instance.apply_central_impulse(look_direction * throw_force)
 	
-	
+func _on_child_entered_tree(node: Node) -> void:
+	# stolen from above :E
+	if node is RigidBody3D and node.name == "TimeBomb":
+		print("new bomb found")
+		node.death.connect(office_environment._on_death)
+		node.death.connect(_on_death)
+
+func _on_death(node):
+	set_process(false)
+	player.release_mouse()
+	player.queue_free() #lmao
+	for child in get_children():
+		if child.name == "TimeBomb" && child != node:
+			# can't worry about overlapping bombs if overlapping bombs.... dont exist
+			child.queue_free()
+	$HUD/ColorRect.visible = true
+	%AnimationPlayer.play("fade_white")
+	await %AnimationPlayer.animation_finished
+	get_tree().change_scene_to_file("res://_scenes/death.tscn")

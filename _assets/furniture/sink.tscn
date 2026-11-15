@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dfmdpt6m3sy1j"]
+
+[ext_resource type="PackedScene" uid="uid://di1dvvkxrr6n5" path="res://_assets/mesh/sink.fbx" id="1_ikm4s"]
+[ext_resource type="Material" uid="uid://b17fa82fd2gjd" path="res://_assets/materials/office furniture.tres" id="2_2712g"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ikm4s"]
+points = PackedVector3Array(0.010132199, 0.0057010762, 0.010447618, -0.0115809515, -0.008408638, -0.010180952, -0.0115809515, -0.010580951, 0.0068271174, -0.0115809515, 0.008599998, 0.010084154, 0.0115809515, 0.008599998, -0.010180952, 0.011362445, -0.0104, 0.009896404, 0.0115809515, -0.008408638, -0.010180952, -0.0115809515, 0.008599998, -0.010180952, 0.0115809515, 0.008599998, 0.010084154, -0.010132199, -0.008046272, 0.010447618, 0.0115809515, -0.010580951, 0.0068271174, -0.011362445, -0.0104, 0.009896404, 0.010132199, -0.008046272, 0.010447618, -0.010132199, 0.0057010762, 0.010447618)
+
+[node name="sink" unique_id=1248531388 instance=ExtResource("1_ikm4s")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="0" unique_id=1500941841]
+transform = Transform3D(72.54956, 0, 0, 0, -8.648582e-06, 72.54955, 0, -72.54955, -8.648582e-06, 0, 0.8141788, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1" unique_id=1054116295]
+transform = Transform3D(72.54956, 0, 0, 0, -8.648582e-06, 72.54955, 0, -72.54955, -8.648582e-06, 0, 0.8141788, 0)
+shape = SubResource("ConvexPolygonShape3D_ikm4s")
+
+[node name="Cube_011" parent="." index="2" unique_id=914715582]
+surface_material_override/0 = ExtResource("2_2712g")
+
+[node name="counter sink" parent="." index="4" unique_id=684413571]
+surface_material_override/0 = ExtResource("2_2712g")
