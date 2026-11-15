@@ -31,8 +31,6 @@ func pickup(parent):
 	return self
 
 func _process(_delta):
-	print(%AudioStreamPlayer3D.stream)
-	print(alarm)
 	if %model.progress >= 0.8:
 		if %AudioStreamPlayer3D.stream != alarm:
 			%AudioStreamPlayer3D.stream = alarm
