@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://bow3j53gpa8sg"]
+
+[ext_resource type="PackedScene" uid="uid://bbmi1wrml7ao0" path="res://_assets/furniture/table.tscn" id="1_jx3df"]
+[ext_resource type="Script" uid="uid://duxnictteqpxb" path="res://_scripts/main_menu.gd" id="1_tcb7q"]
+[ext_resource type="PackedScene" uid="uid://c344irfyn8q8f" path="res://_assets/timebomb model.tscn" id="2_fasvp"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fasvp"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_tcb7q"]
+sky_material = SubResource("ProceduralSkyMaterial_fasvp")
+
+[sub_resource type="Environment" id="Environment_q13kq"]
+background_mode = 1
+sky = SubResource("Sky_tcb7q")
+
+[sub_resource type="LabelSettings" id="LabelSettings_fasvp"]
+line_spacing = 0.0
+font_size = 93
+
+[node name="Node3D" type="Node3D" unique_id=1241781951]
+script = ExtResource("1_tcb7q")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=781398578]
+environment = SubResource("Environment_q13kq")
+
+[node name="table" parent="." unique_id=800488774 instance=ExtResource("1_jx3df")]
+
+[node name="just the bomb" parent="." unique_id=2027146300 instance=ExtResource("2_fasvp")]
+transform = Transform3D(-0.30169705, 0.06991596, -0.43625185, 0.12078128, 0.5211879, -5.2795173e-09, 0.42498913, -0.09848795, -0.30969232, -2.0691705, 1.3724264, -0.03943491)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=381113896]
+transform = Transform3D(0.99843884, 0.0027849851, -0.055787083, 0, 0.99875623, 0.0498596, 0.055856556, -0.049781755, 0.997197, -2.5916538, 1.7549986, 0.84519696)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2000228487]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer" unique_id=961229020]
+offset_left = 91.0
+offset_top = 87.0
+offset_right = 131.0
+offset_bottom = 127.0
+theme_override_constants/separation = 41
+
+[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer" unique_id=2146229285]
+layout_mode = 2
+text = "TIME 
+BOMB"
+label_settings = SubResource("LabelSettings_fasvp")
+
+[node name="start" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=1935815129]
+unique_name_in_owner = true
+layout_mode = 2
+text = "begin"
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=1573318211]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -2.1422553, 2.6756377, -0.016937971)
+light_energy = 3.222
+light_volumetric_fog_energy = 2.333
+shadow_enabled = true
+spot_range = 1.9095771
+spot_angle = 38.697258
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=502147997]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.036215, 1.422406, 0.9450371)
+light_color = Color(0.74509805, 0.62352943, 1, 1)
+shadow_enabled = true
+
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/start" to="." method="_on_start_pressed"]

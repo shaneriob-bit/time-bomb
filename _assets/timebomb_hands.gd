@@ -10,7 +10,7 @@ extends Node3D
 @onready var reverse: int = 1 # changes to -1 if reversing
 
 func _process(delta):
-	if parent:
+	if parent && "reverse" in parent:
 		reverse = parent.reverse
 	
 	hour_hand.rotation.x -= ((PI/6)*delta)/sec_per_rotation*reverse
