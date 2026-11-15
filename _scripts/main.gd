@@ -38,11 +38,17 @@ var held_object = null
 const RAY_LENGTH = 10
 
 var timeleft:int = 300
+var nextchime:int = 1
 
 func _process(delta):
 	timesincestart += delta
 	timeleft = 300 - timesincestart
 	survival.text = ("0" if timeleft < 540 else "") + str(int(timeleft/60)) + ":" + ("0" if int(timeleft) % 60 < 10 else "") + str(int(timeleft) % 60)
+	#print(int(timesincestart)/60)
+	if int(timesincestart)/60 == nextchime:
+		print("chime chondition")
+		nextchime += 1
+		%clockchime.play()
 	if timesincestart >= 300:
 		player.release_mouse()
 		get_tree().change_scene_to_file("res://_scenes/win.tscn")

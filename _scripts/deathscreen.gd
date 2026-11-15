@@ -54,4 +54,5 @@ func _ready():
 
 
 func _on_button_pressed() -> void:
+	%buttonsound.play()
 	get_tree().change_scene_to_file("res://_scenes/main.tscn")
