@@ -53,7 +53,6 @@ script = ExtResource("1_r7lvc")
 [node name="_ceiling" type="CSGBox3D" parent="." unique_id=1014324123]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.883728, 6.3226376, -5.624424)
-visible = false
 cast_shadow = 0
 use_collision = true
 size = Vector3(39.55945, 0.17285156, 35.317383)
@@ -62,7 +61,6 @@ material = SubResource("StandardMaterial3D_nw23d")
 [node name="_ceiling2" type="CSGBox3D" parent="." unique_id=1737113728]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.86428833, 6.3226376, 20.894737)
-visible = false
 cast_shadow = 0
 use_collision = true
 size = Vector3(34.063416, 0.17285156, 17.78955)

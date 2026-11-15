@@ -22,6 +22,7 @@ func _ready():
 	
 	$DisappearTimer.wait_time = randf_range(20.0, 30.0)
 	$DisappearTimer.start()
+	%alarming.stream_paused = true
 
 func pickup(parent):
 	position = touch_interest_position
@@ -32,16 +33,21 @@ func pickup(parent):
 
 func _process(_delta):
 	if %model.progress >= 0.8:
-		if %AudioStreamPlayer3D.stream != alarm:
-			%AudioStreamPlayer3D.stream = alarm
+		print("condition met")
+		print(%alarming.playing)
+		if %alarming.playing == false:
+			%ticking.stop()
+			%alarming.play()
 		if %model.progress >= 1 and candie:
 			candie = false
 			print("YOU JUST DIED")
 			death.emit(self)
 			%AnimationPlayer.play("die")
 	else:
-		if %AudioStreamPlayer3D.stream != ticking:
-			%AudioStreamPlayer3D.stream = ticking
+		if %ticking.playing == false:
+			%alarming.stop()
+			%ticking.play()
+			
 	
 
 func _on_visible_on_screen_notifier_3d_screen_entered() -> void:

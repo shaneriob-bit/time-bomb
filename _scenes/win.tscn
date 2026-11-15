@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://pjrdhqsbmf4f"]
+
+[ext_resource type="PackedScene" uid="uid://dcjl1x0yu8hpn" path="res://_assets/furniture/cubicle.tscn" id="1_lx3yj"]
+[ext_resource type="PackedScene" uid="uid://dbqmm54o1a3ks" path="res://_assets/furniture/alarm_clock.tscn" id="2_f5gkr"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_f5gkr"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_3ai6m"]
+sky_material = SubResource("ProceduralSkyMaterial_f5gkr")
+
+[sub_resource type="Environment" id="Environment_vx8d7"]
+background_mode = 2
+sky = SubResource("Sky_3ai6m")
+
+[sub_resource type="LabelSettings" id="LabelSettings_nw23d"]
+font_size = 60
+
+[node name="win" type="Node3D" unique_id=2133453454]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=740384399]
+environment = SubResource("Environment_vx8d7")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1544691842]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+light_color = Color(0.9544198, 0.9364552, 0.8466446, 1)
+light_energy = 0.75
+shadow_enabled = true
+
+[node name="Label" type="Label" parent="." unique_id=1444316900]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -553.0
+offset_top = -107.0
+offset_right = -214.0
+offset_bottom = 94.5
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 8
+text = "You win!!"
+label_settings = SubResource("LabelSettings_nw23d")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="cubicle" parent="." unique_id=751615103 instance=ExtResource("1_lx3yj")]
+
+[node name="alarm clock" parent="." unique_id=1625312352 instance=ExtResource("2_f5gkr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.44238567, 1.3399997, -2.267307)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1231772190]
+transform = Transform3D(0.9736124, 0, -0.22820805, 0, 1, 0, 0.22820805, 0, 0.9736124, 0.6835263, 1.5607667, -1.0212016)

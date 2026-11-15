@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://c344irfyn8q8f" path="res://_assets/timebomb model.tscn" id="2_gv20f"]
 [ext_resource type="Script" uid="uid://jon6nik2l81" path="res://_scripts/time_bomb.gd" id="2_wudls"]
 [ext_resource type="AudioStream" uid="uid://6v3r2cg7v4i3" path="res://_assets/audio/ticking.wav" id="3_wudls"]
+[ext_resource type="AudioStream" uid="uid://b8vgq1o3m1fdq" path="res://_assets/audio/bomb alarm.wav" id="3_xjwlm"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_gv20f"]
 points = PackedVector3Array(-0.0802194, 0.031751394, -0.182673, 0.079890825, 0.065546274, 0.17122045, 0.075402535, 0.07638009, 0.17308648, -0.0802194, 0.031751394, 0.18507302, -0.036802694, 0.12901174, -0.16807604, 0.048246615, -0.0091264015, -0.16963826, -0.047888972, 0.12441885, 0.1722831, 0.04821748, 0.124282755, -0.16953464, -0.036825113, -0.013858166, 0.17057857, 0.048246615, -0.0091264015, 0.17203827, 0.037166543, 0.128861, 0.17011875, 0.07974021, 0.049651556, -0.16849905, -0.0802194, 0.08344543, -0.182673, -0.047918107, -0.009262498, -0.16998671, -0.0802194, 0.08344543, 0.18507302, 0.03718897, -0.013707425, -0.16782124, 0.075402535, 0.07638009, -0.17068647, 0.07527959, 0.038833268, 0.17280544, 0.04821748, 0.124282755, 0.17193465, -0.036825113, -0.013858166, -0.16817856, -0.036802694, 0.12901174, 0.17047605, 0.03718897, -0.013707425, 0.17022125, 0.037166543, 0.128861, -0.16771874, -0.047918107, -0.009262498, 0.17238672, -0.047888972, 0.12441885, -0.16988309, 0.07527959, 0.038833268, -0.17040543, 0.079890825, 0.065546274, -0.16882044, 0.07974021, 0.049651556, 0.17089906, 0.052451994, -0.002481388, 0.16838856, 0.052451994, -0.002481388, -0.16598855)
@@ -85,13 +86,21 @@ transform = Transform3D(0.288, 0, 0, 0, 0.288, 0, 0, 0, 0.288, 0, 0, 0)
 transform = Transform3D(1.21, 0, 0, 0, 1.21, 0, 0, 0, 1.21, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_gv20f")
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1174623460]
+[node name="alarming" type="AudioStreamPlayer3D" parent="." unique_id=1962949776]
+unique_name_in_owner = true
+stream = ExtResource("3_xjwlm")
+volume_db = 2.0
+unit_size = 0.5
+max_db = 6.0
+
+[node name="ticking" type="AudioStreamPlayer3D" parent="." unique_id=1174623460]
 unique_name_in_owner = true
 stream = ExtResource("3_wudls")
 volume_db = 1.0
 unit_size = 0.5
 max_db = 6.0
 autoplay = true
+playback_type = 1
 
 [node name="CSGSphere3D" type="CSGSphere3D" parent="." unique_id=241761887]
 transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
