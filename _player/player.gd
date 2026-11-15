@@ -18,11 +18,15 @@ var walk_vel: Vector3 # Walking velocity
 var grav_vel: Vector3 # Gravity velocity 
 var jump_vel: Vector3 # Jumping velocity
 
+var original_walk_speed
+var sprint_speed
+
 @onready var camera: Camera3D = $Camera
 
 func _ready() -> void:
-	#capture_mouse()
-	pass
+	original_walk_speed = speed
+	sprint_speed = original_walk_speed * 1.6
+
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
@@ -35,7 +39,11 @@ func _unhandled_input(event: InputEvent) -> void:
 			release_mouse()
 		else:
 			capture_mouse()
-
+	
+	if Input.is_action_pressed("sprint"):
+		speed = sprint_speed
+	else:
+		speed = original_walk_speed
 
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed(&"jump"): jumping = true

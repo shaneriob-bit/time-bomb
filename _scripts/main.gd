@@ -26,7 +26,7 @@ func _ready() -> void:
 
 var held_object = null
 
-const RAY_LENGTH = 3
+const RAY_LENGTH = 8
 
 func _process(delta):
 	timesincestart += delta
@@ -124,17 +124,22 @@ func is_bomb_too_close(pos : Vector3) -> bool:
 		if bomb.position.distance_to(pos) < closest_distance:
 			closest_distance = bomb.position.distance_to(pos)
 			
-	return closest_distance < 15
+	return closest_distance < 5
 	
 func request_disappear(bomb : Node3D):
 	print("disappearing")
 	var found = false
 	var spot
+	var count = 0
 	
 	while not found:
+		count += 1
 		spot = hiding_spots[randi_range(0, hiding_spots.size() - 1)]
 		if not is_bomb_too_close(spot.position):
 			found = true
+		
+		if count > 30:
+			printerr("Unable to find hiding spot")
 	
 	bomb.global_position = spot.global_position
 	bomb.global_rotation = spot.global_rotation
