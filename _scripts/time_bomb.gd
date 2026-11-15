@@ -43,8 +43,8 @@ func _process(_delta):
 		if %AudioStreamPlayer3D.stream != ticking:
 			%AudioStreamPlayer3D.stream = ticking
 			
-	if freeze == true:
-		%AudioStreamPlayer3D.unit_size = 0.5
+	if freeze == false:
+		%AudioStreamPlayer3D.unit_size = 1
 	else: 
 		%AudioStreamPlayer3D.unit_size = 3
 	
