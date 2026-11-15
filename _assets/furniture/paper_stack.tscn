@@ -14,9 +14,8 @@ albedo_texture = ExtResource("2_h40p2")
 [node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=1591314370]
 transform = Transform3D(37.718285, 0, 0, 0, -4.49637e-06, 37.71828, 0, -37.71828, -4.49637e-06, 0, 0, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="2" unique_id=1315913198]
-transform = Transform3D(37.718285, 0, 0, 0, -4.49637e-06, 37.71828, 0, -37.71828, -4.49637e-06, 0, 0, 0)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=1315913198]
 shape = SubResource("ConvexPolygonShape3D_h40p2")
 
-[node name="paper stack" parent="." index="3" unique_id=497553174]
+[node name="paper stack" parent="." index="2" unique_id=497553174]
 surface_material_override/0 = SubResource("StandardMaterial3D_nxsc4")
