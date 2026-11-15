@@ -7,13 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://ca841hl8cvkd4" path="res://_assets/sprites/crosshair_small.png" id="5_6bnj4"]
 [ext_resource type="PackedScene" uid="uid://btol6us4pyqn3" path="res://_scenes/hiding_spot.tscn" id="5_ce27d"]
 [ext_resource type="PackedScene" uid="uid://c5nedhii8d1cg" path="res://_assets/furniture/clock.tscn" id="6_ce27d"]
+[ext_resource type="AudioStream" uid="uid://6v3r2cg7v4i3" path="res://_assets/audio/ticking.wav" id="8_hi6yo"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v4k5x"]
 albedo_color = Color(0.080783345, 0.080783345, 0.080783345, 1)
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_urak4"]
-rough = true
-bounce = 0.25
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6bnj4"]
 
@@ -84,15 +81,12 @@ speed = 4.0
 
 [node name="TimeBomb" parent="." unique_id=999626019 instance=ExtResource("3_3q5j6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5524559, 1.3583069, -2.549686)
-physics_material_override = SubResource("PhysicsMaterial_urak4")
 
 [node name="TimeBomb2" parent="." unique_id=1810194879 instance=ExtResource("3_3q5j6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5524559, 1.3583069, -4.549686)
-physics_material_override = SubResource("PhysicsMaterial_urak4")
 
 [node name="TimeBomb3" parent="." unique_id=168694722 instance=ExtResource("3_3q5j6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5524559, 1.3583069, -6.549686)
-physics_material_override = SubResource("PhysicsMaterial_urak4")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=2057979396]
 anchors_preset = 15
@@ -237,8 +231,13 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -16.
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 14.2079735, 3.4890132, 11.782209)
 
 [node name="DisappearTimer" type="Timer" parent="." unique_id=1246016530]
-wait_time = 25.0
+wait_time = 60.0
 autostart = true
+
+[node name="HeldTickingPlayer" type="AudioStreamPlayer" parent="." unique_id=567756386]
+stream = ExtResource("8_hi6yo")
+volume_db = 2.985
+autoplay = true
 
 [connection signal="child_entered_tree" from="." to="." method="_on_child_entered_tree"]
 [connection signal="timeout" from="DisappearTimer" to="." method="_on_disappear_timer_timeout"]

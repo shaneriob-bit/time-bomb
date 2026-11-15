@@ -24,6 +24,8 @@ func _ready() -> void:
 	for child in get_children():
 		if child.name.contains("TimeBomb") and child is RigidBody3D:
 			time_bombs.append(child)
+
+	$HeldTickingPlayer.stream_paused = true
 	
 @export var throwable_scene: PackedScene
 @export var throw_force: float = 20.0
@@ -52,10 +54,11 @@ func _unhandled_input(event: InputEvent) -> void:
 				if collision_object is RigidBody3D and collision_object.name.contains("TimeBomb"):
 					held_object = collision_object.pickup($SubViewportContainer.get_node("SubViewport"))
 					%rewind.visible = true
+					$HeldTickingPlayer.stream_paused = false
 	
 	if event.is_action_pressed("rewind"):
 		if held_object:
-			held_object.reverse = -3
+			held_object.reverse = -4
 	if event.is_action_released("rewind"):
 		if held_object:
 			held_object.reverse = 1
@@ -89,7 +92,8 @@ func throw_object(force: bool = true) -> void:
 	if force:
 		# Apply a central impulse along the look vector
 		instance.apply_central_impulse(look_direction * throw_force)
-		
+	
+	$HeldTickingPlayer.stream_paused = true
 	held_object = null
 	
 func _on_child_entered_tree(node: Node) -> void:
@@ -149,7 +153,7 @@ func request_disappear(bomb : Node3D):
 		bomb.global_rotation = spot.global_rotation
 		
 		can_disappear = false
-		$DisappearTimer.wait_time = randf_range(25.0, 35.0)
+		$DisappearTimer.wait_time = randf_range(45, 65)
 		$DisappearTimer.start()
 
 

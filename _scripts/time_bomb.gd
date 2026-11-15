@@ -51,9 +51,7 @@ func disappear():
 	if not on_screen and get_parent() == main and not freeze:
 		if main.request_disappear(self):
 			freeze = true
-		
+	
 	disappear_ready = false
-	$DisappearTimer.wait_time = randf_range(20.0, 30.0)
+	$DisappearTimer.wait_time = randf_range(1.5, 3.0)
 	$DisappearTimer.start()
-	
-	
