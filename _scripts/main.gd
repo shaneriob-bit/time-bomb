@@ -1,7 +1,5 @@
 extends Node
 
-@onready var held_node = $SubViewportContainer/SubViewport/TimeBomb
-
 @onready var player = $Player
 
 
@@ -11,6 +9,8 @@ func _ready() -> void:
 @export var throwable_scene: PackedScene
 @export var throw_force: float = 20.0
 @onready var camera: Camera3D = player.get_node("Camera")
+
+var held_object = null
 
 const RAY_LENGTH = 10
 
@@ -30,18 +30,26 @@ func _unhandled_input(event: InputEvent) -> void:
 		if result:
 			var collision_object = result.collider
 			print(collision_object.name)
+			if collision_object is RigidBody3D and collision_object.name == "TimeBomb":
+				held_object = collision_object.pickup($SubViewportContainer.get_node("SubViewport"))
 
 func throw_object() -> void:
 	if not throwable_scene:
 		return
+		
+	if not held_object:
+		return
 
 	# Instance the rigid body object
-	var instance: RigidBody3D = throwable_scene.instantiate() as RigidBody3D
-	get_tree().current_scene.add_child(instance)
-
+	var instance: RigidBody3D = held_object
+	instance.reparent(get_tree().current_scene)
+	instance.freeze = false
+	
 	# Position it slightly in front of the camera
 	var spawn_distance = 0.010
 	instance.global_position = camera.global_position - camera.global_transform.basis.z * spawn_distance
+
+	await get_tree().physics_frame
 
 	# Get the camera's look direction (forward vector in Godot is -Z)
 	var look_direction = -camera.global_transform.basis.z
