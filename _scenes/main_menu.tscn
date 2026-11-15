@@ -51,7 +51,8 @@ label_settings = SubResource("LabelSettings_fasvp")
 [node name="start" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=1935815129]
 unique_name_in_owner = true
 layout_mode = 2
-text = "begin"
+theme_override_font_sizes/font_size = 23
+text = "Begin"
 
 [node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=1573318211]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -2.1422553, 2.6756377, -0.016937971)

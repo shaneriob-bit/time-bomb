@@ -30,10 +30,6 @@ shader_parameter/twinkle_speed = 0.3
 shader_parameter/pixelate_enabled = false
 shader_parameter/pixelate_count = 1000.0
 
-[sub_resource type="LabelSettings" id="LabelSettings_7ag0t"]
-line_spacing = -8.695
-font_size = 33
-
 [sub_resource type="Animation" id="Animation_eqp8a"]
 length = 0.001
 tracks/0/type = "value"
@@ -71,6 +67,10 @@ _data = {
 &"fade": SubResource("Animation_gcids")
 }
 
+[sub_resource type="LabelSettings" id="LabelSettings_7ag0t"]
+line_spacing = -8.695
+font_size = 33
+
 [node name="death" type="Node3D" unique_id=26096098]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1558974220]
@@ -93,32 +93,6 @@ material = SubResource("ShaderMaterial_ia55b")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1871822503]
 
-[node name="Label" type="Label" parent="CanvasLayer" unique_id=352374481]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -71.0
-offset_top = -99.0
-offset_right = 71.0
-offset_bottom = -6.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-text = "You
-Died
-
-You Lasted"
-label_settings = SubResource("LabelSettings_7ag0t")
-horizontal_alignment = 1
-vertical_alignment = 1
-visible_characters = 20
-script = ExtResource("2_eqp8a")
-
-[node name="DeathTimer" type="Timer" parent="CanvasLayer/Label" unique_id=1811273702]
-unique_name_in_owner = true
-
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1671876311]
 anchors_preset = 15
 anchor_right = 1.0
@@ -135,20 +109,40 @@ color = Color(0, 0, 0, 1)
 unique_name_in_owner = true
 libraries/ = SubResource("AnimationLibrary_81c5p")
 
-[node name="Button" type="Button" parent="CanvasLayer" unique_id=730085959]
-unique_name_in_owner = true
-anchors_preset = -1
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer" unique_id=1887406726]
+anchors_preset = 8
 anchor_left = 0.5
-anchor_top = 0.73200005
+anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.73200005
-offset_left = -62.0
-offset_top = -27.33603
-offset_right = 62.0
-offset_bottom = 26.66397
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -69.0
+offset_right = 250.0
+offset_bottom = 69.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_font_sizes/font_size = 33
+theme_override_constants/separation = 18
+alignment = 1
+
+[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer" unique_id=352374481]
+custom_maximum_size = Vector2(500, -1)
+layout_mode = 2
+size_flags_horizontal = 4
+label_settings = SubResource("LabelSettings_7ag0t")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+script = ExtResource("2_eqp8a")
+
+[node name="DeathTimer" type="Timer" parent="CanvasLayer/VBoxContainer/Label" unique_id=1811273702]
+unique_name_in_owner = true
+
+[node name="Button" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=2053703285]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
 text = "Restart"
+
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/Button" to="CanvasLayer/VBoxContainer/Label" method="_on_button_pressed"]

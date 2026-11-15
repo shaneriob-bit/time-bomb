@@ -15,9 +15,17 @@ run/main_scene="uid://cam4qylhbxqoh"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Globals="*uid://brtpbk48yr8sg"
+
 [display]
 
 window/stretch/mode="canvas_items"
+
+[gui]
+
+theme/custom_font="uid://tujx4ctjnfg6"
 
 [input]
 

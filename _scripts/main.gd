@@ -120,6 +120,7 @@ func _on_death(node):
 		$HUD/ColorRect.visible = true
 		%AnimationPlayer.play("fade_white")
 		await %AnimationPlayer.animation_finished
+		Globals.finaltime = timesincestart
 		get_tree().change_scene_to_file("res://_scenes/death.tscn")
 
 func is_bomb_too_close(pos : Vector3) -> bool:
