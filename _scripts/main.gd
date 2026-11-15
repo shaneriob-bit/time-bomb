@@ -152,8 +152,8 @@ func request_disappear(bomb : Node3D):
 				break
 		
 		var disappeareffect = BOMB_DISAPPEAR.instantiate()
-		disappeareffect.global_position = bomb.global_position
 		add_child(disappeareffect)
+		disappeareffect.global_position = bomb.global_position
 		
 		bomb.global_position = spot.global_position
 		bomb.global_rotation = spot.global_rotation
