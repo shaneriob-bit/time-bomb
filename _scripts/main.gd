@@ -50,7 +50,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		if held_object:
 			held_object.reverse = 1
 	
-func throw_object() -> void:
+func throw_object(force: bool = true) -> void:
 	if not throwable_scene:
 		return
 		
@@ -76,17 +76,21 @@ func throw_object() -> void:
 	# Get the camera's look direction (forward vector in Godot is -Z)
 	var look_direction = -camera.global_transform.basis.z
 
-	# Apply a central impulse along the look vector
-	instance.apply_central_impulse(look_direction * throw_force)
+	if force:
+		# Apply a central impulse along the look vector
+		instance.apply_central_impulse(look_direction * throw_force)
 	
 func _on_child_entered_tree(node: Node) -> void:
 	# stolen from above :E
 	if node is RigidBody3D and node.name == "TimeBomb":
 		print("new bomb found")
-		node.death.connect(office_environment._on_death)
-		node.death.connect(_on_death)
+		if !node.is_connected("death",office_environment._on_death):
+			node.death.connect(office_environment._on_death)
+		if !node.is_connected("death",_on_death):
+			node.death.connect(_on_death)
 
 func _on_death(node):
+	await throw_object(false)
 	set_process(false)
 	player.release_mouse()
 	player.queue_free() #lmao
