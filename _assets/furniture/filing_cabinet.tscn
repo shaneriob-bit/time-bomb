@@ -3,7 +3,17 @@
 [ext_resource type="PackedScene" uid="uid://bbrne62cawgeh" path="res://_assets/mesh/filing cabinet.fbx" id="1_mhvib"]
 [ext_resource type="Material" uid="uid://b17fa82fd2gjd" path="res://_assets/materials/office furniture.tres" id="2_l1vpe"]
 
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_mhvib"]
+points = PackedVector3Array(0.005282193, 0.0053, 0.024284922, -0.004744224, -0.0061849207, 0.0020565, -0.0053, -0.0052720862, 0.001709576, -0.0053, -0.0052720862, 0.024590423, -0.005156796, 0.0053, 0.0020150775, 0.0053, -0.005155062, 0.0019770896, 0.00436063, -0.006, 0.023896828, 0.005282193, 0.0053, 0.0020150775, -0.005156796, 0.0053, 0.024284922, 0.0053, -0.005155062, 0.02432291, -0.004744224, -0.0061849207, 0.0242435, 0.00436063, -0.006, 0.0024031717)
+
 [node name="filing cabinet" unique_id=1528820851 instance=ExtResource("1_mhvib")]
 
 [node name="filing cabinet" parent="." index="1" unique_id=1918629227]
 surface_material_override/0 = ExtResource("2_l1vpe")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="2" unique_id=629495224]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=1771025614]
+transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, -1.4210855e-14, 0, 1.4210855e-14, 1.0000001, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_mhvib")

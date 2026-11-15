@@ -3,6 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://fu017wcdj4it" path="res://_assets/mesh/table.fbx" id="1_2pbli"]
 [ext_resource type="Material" uid="uid://b17fa82fd2gjd" path="res://_assets/materials/office furniture.tres" id="2_wvsqj"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_nw23d"]
+size = Vector3(5.0959473, 1.3673096, 2.0544434)
+
 [node name="table" unique_id=800488774 instance=ExtResource("1_2pbli")]
 
 [node name="Cube" parent="." index="0" unique_id=2086523242]
@@ -10,3 +13,9 @@ surface_material_override/0 = ExtResource("2_wvsqj")
 
 [node name="Cube_001" parent="." index="1" unique_id=323811339]
 surface_material_override/0 = ExtResource("2_wvsqj")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="3" unique_id=585033329]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=1520436327]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6731073, 0)
+shape = SubResource("BoxShape3D_nw23d")
