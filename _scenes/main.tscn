@@ -11,14 +11,11 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v4k5x"]
 albedo_color = Color(0.080783345, 0.080783345, 0.080783345, 1)
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6bnj4"]
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_urak4"]
 rough = true
 bounce = 0.25
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sa4u1"]
-sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6bnj4"]
 
 [sub_resource type="Sky" id="Sky_cn47q"]
 sky_material = SubResource("ProceduralSkyMaterial_6bnj4")
@@ -124,13 +121,13 @@ environment = SubResource("Environment_ce27d")
 transform = Transform3D(-0.7071067, 0, -0.7071068, 0, 1, 0, 0.7071068, 0, -0.7071067, -15, 0.031292193, 1)
 
 [node name="HidingSpot2" parent="office_environment/HidingSpots" unique_id=2056464426 instance=ExtResource("5_ce27d")]
-transform = Transform3D(-5.9604645e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -5.9604645e-08, -13, 0.6966034, 10)
+transform = Transform3D(-5.9604645e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -5.9604645e-08, -13, 0.9369581, 10)
 
 [node name="HidingSpot3" parent="office_environment/HidingSpots" unique_id=1278525959 instance=ExtResource("5_ce27d")]
-transform = Transform3D(0.9659257, 0, 0.25881907, 0, 1, 0, -0.25881907, 0, 0.9659257, -14.392492, 0.6941143, 8.104616)
+transform = Transform3D(0.9659257, 0, 0.25881907, 0, 1, 0, -0.25881907, 0, 0.9659257, -14.392492, 0.93896186, 8.104616)
 
 [node name="HidingSpot4" parent="office_environment/HidingSpots" unique_id=1950543802 instance=ExtResource("5_ce27d")]
-transform = Transform3D(0.9458182, 0, -0.32469633, 0, 1, 0, 0.32469633, 0, 0.9458182, -14.609272, 0.6941143, 5.120524)
+transform = Transform3D(0.9458182, 0, -0.32469633, 0, 1, 0, 0.32469633, 0, 0.9458182, -14.609272, 0.9191364, 5.120524)
 
 [node name="HidingSpot5" parent="office_environment/HidingSpots" unique_id=785892269 instance=ExtResource("5_ce27d")]
 transform = Transform3D(0.024128616, 0, 0.9997089, 0, 1, 0, -0.9997089, 0, 0.024128616, 0.036753207, 0.033390477, 12.792387)
