@@ -48,6 +48,7 @@ func throw_object() -> void:
 	# Position it slightly in front of the camera
 	var spawn_distance = 0.010
 	instance.global_position = camera.global_position - camera.global_transform.basis.z * spawn_distance
+	instance.global_rotation_degrees = Vector3(randf_range(0, 360), randf_range(0, 360),randf_range(0, 360))
 
 	await get_tree().physics_frame
 
@@ -56,3 +57,5 @@ func throw_object() -> void:
 
 	# Apply a central impulse along the look vector
 	instance.apply_central_impulse(look_direction * throw_force)
+	
+	
