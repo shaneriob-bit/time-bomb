@@ -1,7 +1,7 @@
-[gd_scene format=3 uid="uid://pjrdhqsbmf4f"]
+[gd_scene format=4 uid="uid://pjrdhqsbmf4f"]
 
 [ext_resource type="PackedScene" uid="uid://dcjl1x0yu8hpn" path="res://_assets/furniture/cubicle.tscn" id="1_lx3yj"]
-[ext_resource type="PackedScene" uid="uid://dbqmm54o1a3ks" path="res://_assets/furniture/alarm_clock.tscn" id="2_f5gkr"]
+[ext_resource type="Material" uid="uid://b17fa82fd2gjd" path="res://_assets/materials/office furniture.tres" id="2_f5gkr"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_f5gkr"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -16,6 +16,193 @@ sky = SubResource("Sky_3ai6m")
 
 [sub_resource type="LabelSettings" id="LabelSettings_nw23d"]
 font_size = 60
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q7n82"]
+resource_name = "Office furniture"
+vertex_color_use_as_albedo = true
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_htwwi"]
+_surfaces = [{
+"aabb": AABB(-0.009510566, -0.01, -0.00074037316, 0.019021131, 0.02, 0.0014807463),
+"format": 34359742465,
+"index_count": 228,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAABAAAAAwACAAUAAAADAAYABAAAAAcABgAHAAAACAAGAAMABwAGAAkABgAIAAoACgAJAAYACQALAAcABAAHAAsACwAJAAwADAAJAAoADAANAAsABAALAA0AAwAOAAgABQAOAAMACgAIAA8ADwAIAA4ADgAFABAABAANABEADgASAA8AEAASAA4ADwATAAoAEwAPABIAFAAKABMACgAUAAwADQAMABUAFQAMABQAFQARAA0AEwAWABQAFgATABIAFAAXABUAFwAUABYAEQAVABgAGAAVABcAGAAEABEAFgAZABcAGQAWABIAGgAXABkAFwAaABgAGQAbABoAGwAZABIAGAAaABwAHAAaABsAHQAEABgABAAdAAEAHAAeABgAGAAeAB0AGwAfABwAHwAbABIAHgAcACAAIAAcAB8AIQAdAB4AHQAhAAEAHgAiACEAIAAiAB4AIQAjAAEAIwAhACIAAQAjACQAIgAkACMAJAAiACAAJAACAAEAAgAkACUAIAAlACQAJQAFAAIAHwAmACAAJQAgACYAJgAfABIABQAlACcAJgAnACUAJwAmABIAJwAQAAUAJwASABAA"),
+"name": "Office furniture",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 40,
+"vertex_data": PackedByteArray("AAAAAArXIzyaFUK6AJvAO6GMBDyaFUK6AJvAO6OMBDyaFUI6AAAAAArXIzyFFUI6AAAAAArXI7yFFUK66oCrO/EN7DuaFUI6AJvAu6OMBDyaFUI6AJvAu6GMBDyaFUK66oCru/EN7DuaFUI6NNIbvHaESjuaFUI6078KvF9UNDuaFUI6NNIbvHGESjuaFUK6NNIbvHGESruaFUI6NNIbvHaESruaFUK6AAAAAMHjETyFFUI66oCru/EN7DtI8cE26oCrO/EN7DtI8cE2AJvAu6OMBLyaFUK6AAAAAMHjETwK58E2078KvF9UNDtI8cE2078KvFpUNLuaFUI6AJvAu6GMBLyaFUI6078KvFpUNLtI8cE26oCru+4N7LuaFUI6AAAAAArXI7yaFUI66oCru+4N7LtI8cE2AAAAAMDjEbyaFUI6AAAAAMDjEbxI8cE26oCrO+4N7LuaFUI6AJvAO6OMBLyaFUK6AJvAO6GMBLyaFUI66oCrO+4N7LtI8cE2078KPFpUNLuaFUI6NNIbPHaESruaFUK6NNIbPHGESruaFUI6NNIbPHGESjuaFUK6NNIbPHaESjuaFUI6078KPF9UNDuaFUI6078KPFpUNLtI8cE2078KPF9UNDtI8cE2")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_xxabi"]
+resource_name = "Cylinder_006"
+_surfaces = [{
+"aabb": AABB(-0.009510566, -0.01, -0.00074037316, 0.019021131, 0.02, 0.0014807463),
+"attribute_data": PackedByteArray("MEnjPuC4pj5O6eg+7PqePsZ15z5gIp0+iAjhPrgSpj5O6eg+7PqePpAC8j4ABpw+euvxPjitmT7Gdec+YCKdPpAC8j4ABpw+YBz7Pm76nj7Havw+1AadPnrr8T44rZk+YBz7Pm76nj4VXgA/xremPmh4AT9C6aU+x2r8PtQGnT4VXgA/xremPvpbAD9yRrA+3YIBP4YFsT5oeAE/QumlPpMf+z5mBrg+o2/8Pub4uT7dggE/hgWxPvpbAD9yRrA+XgbyPpT9uj5B8PE+TFa9PqNv/D7m+Lk+kx/7PmYGuD6w6ug+vgq4PhJ65z5U5Lk+QfDxPkxWvT5eBvI+lP26PvpbAD9yRrA+TunoPuz6nj4wSeM+4LimPkZF4z4+TbA+sOroPr4KuD5eBvI+lP26PpMf+z5mBrg+FV4AP8a3pj5gHPs+bvqePpAC8j4ABpw+RkXjPj5NsD4HGuE+mgGxPhJ65z5U5Lk+sOroPr4KuD4wSeM+4LimPogI4T64EqY+BxrhPpoBsT5GReM+Pk2wPt0D/j56Zrw+hd0CP8oLsj47TAI/bqexPilV/T6+abs+iAjhPrgSpj7Gdec+YCKdPi6N5j5Es5s+mnTfPhhypT7Gdec+YCKdPnrr8T44rZk++gbyPoT7lz4ujeY+RLObPnrr8T44rZk+x2r8PtQGnT7uf/0+KLibPvoG8j6E+5c+7n/9Pii4mz7Havw+1AadPmh4AT9C6aU+0koCP1B9pT7SSgI/UH2lPmh4AT9C6aU+3YIBP4YFsT47TAI/bqexPt2CAT+GBbE+o2/8Pub4uT4pVf0+vmm7PjtMAj9up7E+o2/8Pub4uT5B8PE+TFa9Pu/Q8T6+B78+KVX9Pr5puz5B8PE+TFa9PhJ65z5U5Lk+uGHmPogwuz7v0PE+vge/Prhh5j6IMLs+EnrnPlTkuT4HGuE+mgGxPh903z6Sa7E+H3TfPpJrsT4HGuE+mgGxPogI4T64EqY+mnTfPhhypT5VtrQ+8+9LP4/klT5lnTY/CTusPsnFPj8VGaw+mBRZP56tlT6KLmE/cwh0Pp4lYT9+W0c+Ov1YP+ZkNj4Q00s/Zp9HPmquPj9TdnQ+eJQ2P/c3/j4Ywpo+PwvyPkjIlj76BvI+hPuXPu5//T4ouJs+mnTfPhhypT6vUd4+Gg+lPkJO3j76xLE+H3TfPpJrsT7ryfE+8DrAPt0D/j56Zrw+KVX9Pr5puz7v0PE+vge/PoXdAj8kIqU+9zf+PhjCmj7uf/0+KLibPtJKAj9QfaU+E9zlPiq4mj6vUd4+Gg+lPpp03z4YcqU+Lo3mPkSzmz4xp+U+xCS8PuvJ8T7wOsA+79DxPr4Hvz64YeY+iDC7PoXdAj/KC7I+hd0CPyQipT7SSgI/UH2lPjtMAj9up7E+PwvyPkjIlj4T3OU+KriaPi6N5j5Es5s++gbyPoT7lz5CTt4++sSxPjGn5T7EJLw+uGHmPogwuz4fdN8+kmuxPg=="),
+"format": 34359742487,
+"index_count": 228,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAAFAAYABgAHAAQACAAJAAoACgALAAgADAANAA4ADgAPAAwAEAARABIAEgATABAAFAAVABYAFgAXABQAGAAZABoAGgAbABgAHAAdAB4AHgAfABwAIAAhACIAIAAiACMAIAAjACQAIAAkACUAIAAlACYAIAAnACEAJwAoACEAKAApACEAKgArACwALAAtACoALgAvADAAMAAxAC4AMgAzADQANAA1ADIANgA3ADgAOAA5ADYAOgA7ADwAPAA9ADoAPgA/AEAAQABBAD4AQgBDAEQARABFAEIARgBHAEgASABJAEYASgBLAEwATABNAEoATgBPAFAAUABRAE4AUgBTAFQAVABVAFIAVgBXAFgAWABZAFYAWgBbAFwAXABdAFoAXgBfAGAAXgBhAF8AYQBiAF8AYgBjAF8AYwBkAF8AZABlAF8AZQBmAF8AZgBnAF8AaABpAGoAagBrAGgAbABtAG4AbgBvAGwAcABxAHIAcgBzAHAAdAB1AHYAdgB3AHQAeAB5AHoAegB7AHgAfAB9AH4AfgB/AHwAgACBAIIAggCDAIAAhACFAIYAhgCHAIQAiACJAIoAigCLAIgA"),
+"material": SubResource("StandardMaterial3D_q7n82"),
+"name": "Office furniture",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 140,
+"vertex_data": PackedByteArray("AAAAAArXIzyaFUK6AJvAO6GMBDyaFUK6AJvAO6OMBDyaFUI6AAAAAArXIzyFFUI6AJvAO6GMBDyaFUK6NNIbPHGESjuaFUK6NNIbPHaESjuaFUI6AJvAO6OMBDyaFUI6NNIbPHGESjuaFUK6NNIbPHaESruaFUK6NNIbPHGESruaFUI6NNIbPHaESjuaFUI6NNIbPHaESruaFUK6AJvAO6OMBLyaFUK6AJvAO6GMBLyaFUI6NNIbPHGESruaFUI6AJvAO6OMBLyaFUK6AAAAAArXI7yFFUK6AAAAAArXI7yaFUI6AJvAO6GMBLyaFUI6AJvAu6OMBLyaFUK6AJvAu6GMBLyaFUI6AAAAAArXI7yaFUI6AAAAAArXI7yFFUK6NNIbvHaESruaFUK6NNIbvHGESruaFUI6AJvAu6GMBLyaFUI6AJvAu6OMBLyaFUK6NNIbvHGESjuaFUK6NNIbvHaESjuaFUI6NNIbvHGESruaFUI6NNIbvHaESruaFUK6AAAAAArXI7yFFUK6AJvAO6GMBDyaFUK6AAAAAArXIzyaFUK6AJvAu6GMBDyaFUK6NNIbvHGESjuaFUK6NNIbvHaESruaFUK6AJvAu6OMBLyaFUK6AJvAO6OMBLyaFUK6NNIbPHaESruaFUK6NNIbPHGESjuaFUK6AJvAu6GMBDyaFUK6AJvAu6OMBDyaFUI6NNIbvHaESjuaFUI6NNIbvHGESjuaFUK6AAAAAArXIzyaFUK6AAAAAArXIzyFFUI6AJvAu6OMBDyaFUI6AJvAu6GMBDyaFUK66oCru+4N7LtI8cE2AAAAAMDjEbxI8cE2AAAAAMDjEbyaFUI66oCru+4N7LuaFUI6AAAAAArXIzyFFUI6AJvAO6OMBDyaFUI66oCrO/EN7DuaFUI6AAAAAMHjETyFFUI6AJvAO6OMBDyaFUI6NNIbPHaESjuaFUI6078KPF9UNDuaFUI66oCrO/EN7DuaFUI6NNIbPHaESjuaFUI6NNIbPHGESruaFUI6078KPFpUNLuaFUI6078KPF9UNDuaFUI6078KPFpUNLuaFUI6NNIbPHGESruaFUI6AJvAO6GMBLyaFUI66oCrO+4N7LuaFUI66oCrO+4N7LuaFUI6AJvAO6GMBLyaFUI6AAAAAArXI7yaFUI6AAAAAMDjEbyaFUI6AAAAAArXI7yaFUI6AJvAu6GMBLyaFUI66oCru+4N7LuaFUI6AAAAAMDjEbyaFUI6AJvAu6GMBLyaFUI6NNIbvHGESruaFUI6078KvFpUNLuaFUI66oCru+4N7LuaFUI6NNIbvHGESruaFUI6NNIbvHaESjuaFUI6078KvF9UNDuaFUI6078KvFpUNLuaFUI6078KvF9UNDuaFUI6NNIbvHaESjuaFUI6AJvAu6OMBDyaFUI66oCru/EN7DuaFUI66oCru/EN7DuaFUI6AJvAu6OMBDyaFUI6AAAAAArXIzyFFUI6AAAAAMHjETyFFUI6078KPF9UNDtI8cE2AAAAAMHjETwK58E26oCrO/EN7DtI8cE2078KPFpUNLtI8cE26oCrO+4N7LtI8cE2AAAAAMDjEbxI8cE26oCru+4N7LtI8cE2078KvFpUNLtI8cE2078KvF9UNDtI8cE26oCru/EN7DtI8cE2078KPFpUNLtI8cE2078KPF9UNDtI8cE2078KPF9UNDuaFUI6078KPFpUNLuaFUI6AAAAAMHjETyFFUI6AAAAAMHjETwK58E26oCru/EN7DtI8cE26oCru/EN7DuaFUI6078KvFpUNLtI8cE26oCru+4N7LtI8cE26oCru+4N7LuaFUI6078KvFpUNLuaFUI66oCrO+4N7LtI8cE2078KPFpUNLtI8cE2078KPFpUNLuaFUI66oCrO+4N7LuaFUI66oCrO/EN7DtI8cE2AAAAAMHjETwK58E2AAAAAMHjETyFFUI66oCrO/EN7DuaFUI6078KvF9UNDtI8cE2078KvFpUNLtI8cE2078KvFpUNLuaFUI6078KvF9UNDuaFUI6AAAAAMDjEbxI8cE26oCrO+4N7LtI8cE26oCrO+4N7LuaFUI6AAAAAMDjEbyaFUI6078KPF9UNDtI8cE26oCrO/EN7DtI8cE26oCrO/EN7DuaFUI6078KPF9UNDuaFUI66oCru/EN7DtI8cE2078KvF9UNDtI8cE2078KvF9UNDuaFUI66oCru/EN7DuaFUI6Y5+b4Mf1RnBjn5vgiO4fZWOfm+Cm79hmY5+b4FL3pnIiyty1LsdcayLK3LUIw9ppIsrctcjDH2oiyty148eda////3//f5Rv////f/9/9m7///9//38Rb////3//f7BvIsoiShNj51MiyiJKo2sCTiLKIkr8aSVPIsoiSsBh0FRjn2Mf1GtGQ2OfYx8gnG07Y59jH8yVdTxjn2MfTWVWRJtgYx/9sPVHm2BjH4yzX0ibYGMfqKPKRZtgYx96oEZF3DUiSiarsV3cNSJKOqu/Xdw1IkrIqnFd3DUiSrSqY10AAP9/Fab+fwAA/399p/5/AAD/fyuf/n8AAP9/nZ3+fwAAAABan1FwAAAAAF2fUHAAAAAAVZ9UcAAAAABQn1ZwAAAAAFCfV3AAAAAAT59XcAAAAABTn1VwAAAAAGafTHAAAAAAYZ9OcAAAAABhn05w3DXctewaN3bcNdy1bxd8d9w13LWsKDhx3DXctSkrUXCbYJvgkvpZCJtgm+CH+H4Lm2Cb4OEGaHWbYJvgwQiGcmOfm+Ar8S5pY5+b4Lv3R3Njn5vgB/czcmOfm+Cp8Gdo/3//f0KpoRT/f/9/vN3eLv9//38Q2Ags/3//f5igTBD/f/9/m9axVP9//383yWNb/3//f5vKsVr/f/9/7tiIU/9//39bXC1u/3//fy9Vl2r/f/9/8FX4av9//3+VXcpu/3//f2YSMkn/f/9/wRngTP9//38hNO4l/3//fyA87yH/f/9/ZUNNHv9//3/5PQMh/3//f0OLoQX/f/9/6pf1C/9//39pqbUU/3//f9Xd6i7/f/9/KNgULP9//3/GoGMQ/3//f4bVPFX/f/9/x8ibW/9//38cyvFa/3//f7nXIlT/f/9/plvTbf9//38AVP9p/3//f81UZmr/f/9/9lx6bv9//38hEhBJ/3//f4UZwkz/f/9/ZDTNJf9//39kPM0h/3//f2xDSR7/f/9/AD7/IP9//39ri7YF/3//fw6YBwz/f/9/Z+DLz/9//39n4MvP/3//f2fgy8//f/9/Z+DLz/9//39n4MvP/3//f2fgy8//f/9/Z+DLz/9//39n4MvP/3//f2fgy8//f/9/Z+DLzwAA/39bq/5/AAD/fz6n/n8AAP9/oaf+fwAA/3+6q/5/Y59jH6uS9zxjn2MfjZV/PGOfYx8RbulCY59jHyRrY0Miyty1vcYyayLK3LXpyVlsIsrctZ/JPmwiyty1cMYWa9w13LUVFvl33DXctX4kvXLcNdy1XCMnc9w13LV4FI94m2BjH3+tZEebYGMfNJkYRJtgYx9gm3JEm2BjHxGvpUf///9//3/Saf///3//f/9r////f/9/ymv///9//3+gaZtgm+CY+dkJm2Cb4HsGBXabYJvgggWEd5tgm+Cs+EQL3DUiSlSpcVzcNSJK7abKWtw1Ikolp/Ba3DUiSo6pmVwiyiJKJXDoSiLKIkqVZS1SIsoiSmlmm1EiyiJKVXEXSg==")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_htwwi")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ugc76"]
+resource_name = "Material"
+vertex_color_use_as_albedo = true
+albedo_color = Color(0, 0, 0, 1)
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_xdxye"]
+_surfaces = [{
+"aabb": AABB(-0.00030279867, -0.00034098557, -4.118274e-05, 0.00060559734, 1e-05, 0.005958603),
+"format": 34359742465,
+"index_count": 12,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAACAAEAAQAFAAQA"),
+"name": "Material",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 6,
+"vertex_data": PackedByteArray("IRQ1OU/Gsrns5sE788CeOU/GsrkA064688CeuU/GsrkA0646IRQ1uU/Gsrns5sE7/VWIuU/Gsrmhuyy4/VWIOU/Gsrmhuyy4")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_krpbo"]
+resource_name = "Plane_002"
+_surfaces = [{
+"aabb": AABB(-0.00030279867, -0.00034098557, -4.118274e-05, 0.00060559734, 1e-05, 0.005958603),
+"attribute_data": PackedByteArray("AACAPwAAAAAAAIA/Di8/PwAAAAAOLz8/AAAAAAAAAAAAAAAAAACAPwAAgD8AAIA/"),
+"format": 34359742487,
+"index_count": 12,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAACAAEAAQAFAAQA"),
+"material": SubResource("StandardMaterial3D_ugc76"),
+"name": "Material",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 6,
+"vertex_data": PackedByteArray("IRQ1OU/Gsrns5sE788CeOU/GsrkA064688CeuU/GsrkA0646IRQ1uU/Gsrns5sE7/VWIuU/Gsrmhuyy4/VWIOU/Gsrmhuyy4/38AAP///7//fwAA////v/9/AAD///+//38AAP///7//fwAA////v/9/AAD///+/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_xdxye")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_gg7e7"]
+_surfaces = [{
+"aabb": AABB(-0.0004271285, -0.0004809951, -5.8092475e-05, 0.000854257, 1e-05, 0.00840522),
+"format": 34359742465,
+"index_count": 12,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAACAAEAAQAFAAQA"),
+"name": "Material",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 6,
+"vertex_data": PackedByteArray("Em5/ORIu/Llkwgg8OPDfORIu/LmDm/Y6OPDfuRIu/LmDm/Y6Em5/uRIu/Llkwgg81FDAuRIu/LlSqHO41FDAORIu/LlSqHO4")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_iamw0"]
+resource_name = "Plane_001"
+_surfaces = [{
+"aabb": AABB(-0.0004271285, -0.0004809951, -5.8092475e-05, 0.000854257, 1e-05, 0.00840522),
+"attribute_data": PackedByteArray("AACAPwAAAAAAAIA/Di8/PwAAAAAOLz8/AAAAAAAAAAAAAIA/Di8/PwAAgD8AAIA/AAAAAAAAgD8AAAAADi8/Pw=="),
+"format": 34359742487,
+"index_count": 12,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAAFAAYABgAHAAQA"),
+"material": SubResource("StandardMaterial3D_ugc76"),
+"name": "Material",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("Em5/ORIu/Llkwgg8OPDfORIu/LmDm/Y6OPDfuRIu/LmDm/Y6Em5/uRIu/Llkwgg8OPDfORIu/LmDm/Y61FDAORIu/LlSqHO41FDAuRIu/LlSqHO4OPDfuRIu/LmDm/Y6/38AAP///7//fwAA////v/9/AAD///+//38AAP///7//fwAA////v/9/AAD///+//38AAP///7//fwAA////vw==")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_gg7e7")
+
+[sub_resource type="Animation" id="Animation_5clk7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("second hand:quaternion")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Quaternion(-0.70710677, 0, 0, 0.70710677)]
+}
+
+[sub_resource type="Animation" id="Animation_umu8h"]
+resource_name = "clock_idle"
+length = 6.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("second hand:quaternion")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.0241861, 4.016495, 6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Quaternion(-0.70710677, 0, 0, 0.70710677), Quaternion(-0.28301406, 0.6479993, -0.6479992, 0.28301406), Quaternion(0.2714585, 0.6529245, -0.65292436, -0.27145842), Quaternion(-0.7071068, 0, 0, 0.7071067)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gvfb5"]
+_data = {
+&"RESET": SubResource("Animation_5clk7"),
+&"clock_idle": SubResource("Animation_umu8h")
+}
+
+[sub_resource type="Animation" id="Animation_gvfb5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("hour hand:quaternion")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Quaternion(-0.70710677, 0, 0, 0.70710677)]
+}
+
+[sub_resource type="Animation" id="Animation_30tgf"]
+resource_name = "clock_idle"
+length = 9.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("hour hand:quaternion")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3.02831, 6.008805, 9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Quaternion(-0.70710677, 0, 0, 0.70710677), Quaternion(-0.28193066, 0.64847136, -0.64847136, 0.28193066), Quaternion(-0.2549037, -0.65956354, 0.6595636, 0.25490373), Quaternion(-0.7071068, 0, 0, 0.7071067)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vlrja"]
+_data = {
+&"RESET": SubResource("Animation_gvfb5"),
+&"clock_idle": SubResource("Animation_30tgf")
+}
 
 [node name="win" type="Node3D" unique_id=2133453454]
 
@@ -48,8 +235,35 @@ vertical_alignment = 1
 
 [node name="cubicle" parent="." unique_id=751615103 instance=ExtResource("1_lx3yj")]
 
-[node name="alarm clock" parent="." unique_id=1625312352 instance=ExtResource("2_f5gkr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.44238567, 1.3399997, -2.267307)
-
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1231772190]
-transform = Transform3D(0.9736124, 0, -0.22820805, 0, 1, 0, 0.22820805, 0, 0.9736124, 0.6835263, 1.5607667, -1.0212016)
+transform = Transform3D(0.9736124, 0, -0.22820805, 0, 1, 0, 0.22820805, 0, 0.9736124, 0.6835263, 1.7587402, -1.0212016)
+
+[node name="clock" type="Node3D" parent="." unique_id=302000284]
+transform = Transform3D(0.9436706, 0, 0.33088645, -0.10757169, 0.9456791, 0.30678874, -0.3129124, -0.32510152, 0.89240956, 0.4212067, 1.8399999, -2.1992736)
+
+[node name="Node3D" type="Node3D" parent="clock" unique_id=940726562]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 0, 0, 0)
+
+[node name="clock" type="MeshInstance3D" parent="clock" unique_id=1758171882]
+transform = Transform3D(50, 0, 0, 0, 50, -2.1855694e-06, 0, 2.1855694e-06, 50, 0, 0, 0)
+mesh = SubResource("ArrayMesh_xxabi")
+surface_material_override/0 = ExtResource("2_f5gkr")
+
+[node name="hour hand" type="MeshInstance3D" parent="clock" unique_id=570709361]
+transform = Transform3D(50.00001, 0, 0, 0, 0, 50.000004, 0, -50.000015, 0, 0, 0, 0)
+rotation_edit_mode = 1
+mesh = SubResource("ArrayMesh_krpbo")
+
+[node name="second hand" type="MeshInstance3D" parent="clock" unique_id=49398771]
+transform = Transform3D(50.000004, 0, 0, 0, 0, 50.000004, 0, -50.000008, 0, 0, 0, 0)
+rotation_edit_mode = 1
+mesh = SubResource("ArrayMesh_iamw0")
+
+[node name="seconds" type="AnimationPlayer" parent="clock" unique_id=1885615569]
+libraries/ = SubResource("AnimationLibrary_gvfb5")
+autoplay = &"clock_idle"
+
+[node name="hours" type="AnimationPlayer" parent="clock" unique_id=1390801181]
+libraries/ = SubResource("AnimationLibrary_vlrja")
+autoplay = &"clock_idle"
+speed_scale = 0.5
