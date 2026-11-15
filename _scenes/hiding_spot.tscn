@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://btol6us4pyqn3"]
+
+[ext_resource type="Script" uid="uid://l8cgrdsgikbb" path="res://_scripts/hiding_spot.gd" id="1_5qooh"]
+
+[node name="HidingSpot" type="Node3D" unique_id=71082711]
+script = ExtResource("1_5qooh")
