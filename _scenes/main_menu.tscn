@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://duxnictteqpxb" path="res://_scripts/main_menu.gd" id="1_tcb7q"]
 [ext_resource type="PackedScene" uid="uid://c344irfyn8q8f" path="res://_assets/timebomb model.tscn" id="2_fasvp"]
 [ext_resource type="AudioStream" uid="uid://bk086wj1q244q" path="res://_assets/audio/kaydence loser.mp3" id="2_q13kq"]
+[ext_resource type="AudioStream" uid="uid://de7575jx8eo5k" path="res://_assets/audio/button click.wav" id="5_tmamg"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fasvp"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -41,6 +42,10 @@ transform = Transform3D(-0.30169705, 0.06991596, -0.43625185, 0.12078128, 0.5211
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=381113896]
 transform = Transform3D(0.99843884, 0.0027849851, -0.055787083, 0, 0.99875623, 0.0498596, 0.055856556, -0.049781755, 0.997197, -2.5916538, 1.7549986, 0.84519696)
+
+[node name="buttonsound" type="AudioStreamPlayer" parent="." unique_id=62273268]
+unique_name_in_owner = true
+stream = ExtResource("5_tmamg")
 
 [node name="canvas2" type="CanvasLayer" parent="." unique_id=692908818]
 unique_name_in_owner = true

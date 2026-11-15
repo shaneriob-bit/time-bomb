@@ -3,6 +3,7 @@
 [ext_resource type="Shader" uid="uid://b1aon4fnss32k" path="res://_scripts/death.gdshader" id="1_7ag0t"]
 [ext_resource type="Script" uid="uid://d17itkkehbtex" path="res://_scripts/deathscreen.gd" id="2_eqp8a"]
 [ext_resource type="AudioStream" uid="uid://bk086wj1q244q" path="res://_assets/audio/kaydence loser.mp3" id="2_gcids"]
+[ext_resource type="AudioStream" uid="uid://de7575jx8eo5k" path="res://_assets/audio/button click.wav" id="4_81c5p"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ia55b"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -144,6 +145,10 @@ script = ExtResource("2_eqp8a")
 
 [node name="DeathTimer" type="Timer" parent="CanvasLayer/VBoxContainer/Label" unique_id=1811273702]
 unique_name_in_owner = true
+
+[node name="buttonsound" type="AudioStreamPlayer" parent="CanvasLayer/VBoxContainer/Label" unique_id=43205795]
+unique_name_in_owner = true
+stream = ExtResource("4_81c5p")
 
 [node name="Button" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=2053703285]
 unique_name_in_owner = true
