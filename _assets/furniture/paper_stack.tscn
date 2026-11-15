@@ -3,10 +3,20 @@
 [ext_resource type="PackedScene" uid="uid://d1v8g7wcyxmi5" path="res://_assets/mesh/paper stack.fbx" id="1_h40p2"]
 [ext_resource type="Texture2D" uid="uid://bo610dglqfudd" path="res://_assets/texture images/office furniture.png" id="2_h40p2"]
 
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_h40p2"]
+points = PackedVector3Array(-0.01270303, -0.009744804, 0.0001, 0.012896968, 0.009855193, 0.0089, 0.012896968, -0.009893288, 0.0089, -0.012896968, 0.009855193, 0.0089, 0.01270303, 0.0097067095, 0.0001, -0.012896968, -0.009893288, 0.0089, 0.01270303, -0.009744804, 0.0001, -0.01270303, 0.0097067095, 0.0001)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nxsc4"]
 albedo_texture = ExtResource("2_h40p2")
 
 [node name="paper stack" unique_id=143729597 instance=ExtResource("1_h40p2")]
 
-[node name="paper stack" parent="." index="1" unique_id=497553174]
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=1591314370]
+transform = Transform3D(37.718285, 0, 0, 0, -4.49637e-06, 37.71828, 0, -37.71828, -4.49637e-06, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="2" unique_id=1315913198]
+transform = Transform3D(37.718285, 0, 0, 0, -4.49637e-06, 37.71828, 0, -37.71828, -4.49637e-06, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_h40p2")
+
+[node name="paper stack" parent="." index="3" unique_id=497553174]
 surface_material_override/0 = SubResource("StandardMaterial3D_nxsc4")

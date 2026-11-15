@@ -347,7 +347,7 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -27.
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -28.726448, -0.042568862, -4.116303)
 
 [node name="alarm clock" parent="break room" unique_id=1625312352 instance=ExtResource("19_dqovi")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -13.628077, 1.3685031, 20.185604)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -13.628077, 1.5761113, 20.185606)
 
 [node name="alarm clock2" parent="break room" unique_id=863925214 instance=ExtResource("19_dqovi")]
 transform = Transform3D(0.9659258, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.9659258, -32.393196, 1.8386828, 17.381178)
