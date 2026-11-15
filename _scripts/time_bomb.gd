@@ -16,6 +16,9 @@ signal death(node)
 
 func _ready():
 	main = get_parent()
+	
+	$DisappearTimer.wait_time = randf_range(20.0, 30.0)
+	$DisappearTimer.start()
 
 func pickup(parent):
 	position = touch_interest_position
@@ -44,8 +47,13 @@ func _on_disappear_timer_timeout() -> void:
 	disappear()
 
 func disappear():
-	disappear_ready = false
-	if main.request_disappear(self):
-		freeze = true
+	# is it off screen, not being held and also not already moved?
+	if not on_screen and get_parent() == main and not freeze:
+		if main.request_disappear(self):
+			freeze = true
 		
+	disappear_ready = false
+	$DisappearTimer.wait_time = randf_range(20.0, 30.0)
 	$DisappearTimer.start()
+	
+	

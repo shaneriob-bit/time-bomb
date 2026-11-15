@@ -108,7 +108,6 @@ aabb = AABB(-0.08950096, -0.06767696, -0.219902, 0.17900193, 0.13535392, 0.43980
 [node name="DisappearTimer" type="Timer" parent="." unique_id=1701981403]
 wait_time = 30.0
 one_shot = true
-autostart = true
 
 [connection signal="screen_entered" from="VisibleOnScreenNotifier3D" to="." method="_on_visible_on_screen_notifier_3d_screen_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier3D" to="." method="_on_visible_on_screen_notifier_3d_screen_exited"]

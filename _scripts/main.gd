@@ -13,9 +13,12 @@ var can_disappear : bool = false
 
 var is_dead : bool = false
 
+var raycast : RayCast3D
+
 
 func _ready() -> void:
 	camera = player.get_node("Camera")
+	raycast = player.get_node("Camera/RayCast3D")
 	hiding_spots = $office_environment/HidingSpots.get_children()
 	
 	for child in get_children():
@@ -39,18 +42,12 @@ func _unhandled_input(event: InputEvent) -> void:
 		throw_object()
 		
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		player.capture_mouse()
+		
 		if held_object == null:
-			player.capture_mouse()
-			var from = camera.project_ray_origin(event.position)
-			var to = from + camera.project_ray_normal(event.position) * RAY_LENGTH
-			
-			var space_state = $office_environment.get_world_3d().get_direct_space_state()
-			
-			var query = PhysicsRayQueryParameters3D.create(from, to)
-			query.collide_with_areas = true
-			var result = space_state.intersect_ray(query)
+			var result = raycast.is_colliding()
 			if result:
-				var collision_object = result.collider
+				var collision_object = raycast.get_collider()
 				print(collision_object.name)
 				if collision_object is RigidBody3D and collision_object.name.contains("TimeBomb"):
 					held_object = collision_object.pickup($SubViewportContainer.get_node("SubViewport"))
@@ -152,6 +149,7 @@ func request_disappear(bomb : Node3D):
 		bomb.global_rotation = spot.global_rotation
 		
 		can_disappear = false
+		$DisappearTimer.wait_time = randf_range(25.0, 35.0)
 		$DisappearTimer.start()
 
 
