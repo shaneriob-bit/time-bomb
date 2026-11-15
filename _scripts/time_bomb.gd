@@ -33,22 +33,24 @@ func pickup(parent):
 
 func _process(_delta):
 	if %model.progress >= 0.8:
-		print("condition met")
-		print(%alarming.playing)
-		if %alarming.playing == false:
-			%ticking.stop()
-			%alarming.play()
 		if %model.progress >= 1 and candie:
 			candie = false
 			print("YOU JUST DIED")
 			death.emit(self)
 			%AnimationPlayer.play("die")
-	else:
-		if %ticking.playing == false:
-			%alarming.stop()
-			%ticking.play()
-			
 	
+	if %model.progress <= 0.8:
+		%ticking.stream_paused = false
+		%alarming.stream_paused = true
+	else:
+		%ticking.stream_paused = true
+		%alarming.stream_paused = false
+	
+	if freeze == false:
+		%ticking.unit_size = 1
+	else: 
+		%ticking.unit_size = 3
+
 
 func _on_visible_on_screen_notifier_3d_screen_entered() -> void:
 	on_screen = true

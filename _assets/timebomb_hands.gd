@@ -5,7 +5,7 @@ extends Node3D
 @onready var second_hand: Node3D = $"second hand_001"
 
 # how many seconds it takes for one "hour" to pass
-@onready var sec_per_rotation: float = 8
+@onready var sec_per_rotation: float = 7
 @onready var progress: float = 0 # value from 0 to 1
 @onready var reverse: int = 1 # changes to -1 if reversing
 
