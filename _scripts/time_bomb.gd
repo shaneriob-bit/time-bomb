@@ -42,6 +42,11 @@ func _process(_delta):
 	else:
 		if %AudioStreamPlayer3D.stream != ticking:
 			%AudioStreamPlayer3D.stream = ticking
+			
+	if freeze == true:
+		%AudioStreamPlayer3D.unit_size = 0.5
+	else: 
+		%AudioStreamPlayer3D.unit_size = 3
 	
 
 func _on_visible_on_screen_notifier_3d_screen_entered() -> void:
