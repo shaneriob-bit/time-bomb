@@ -6,7 +6,16 @@ extends RigidBody3D
 @onready var reverse: int = 1 # changes to -1 if reversing
 @onready var candie: bool = true
 
+var main
+
+var on_screen : bool = false
+
+var disappear_ready : bool = false
+
 signal death(node)
+
+func _ready():
+	main = get_parent()
 
 func pickup(parent):
 	position = touch_interest_position
@@ -21,3 +30,19 @@ func _process(_delta):
 		print("YOU JUST DIED")
 		death.emit(self)
 		%AnimationPlayer.play("die")
+
+func _on_visible_on_screen_notifier_3d_screen_entered() -> void:
+	on_screen = true
+	print("entered screen")
+
+func _on_visible_on_screen_notifier_3d_screen_exited() -> void:
+	on_screen = false
+	print("left screen")
+
+func _on_disappear_timer_timeout() -> void:
+	disappear_ready = true
+	disappear()
+
+func disappear():
+	disappear_ready = false
+	main.request_disappear(self)

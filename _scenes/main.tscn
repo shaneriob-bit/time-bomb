@@ -83,7 +83,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1376076, 1, 1.1284199)
 speed = 4.0
 
 [node name="TimeBomb" parent="." unique_id=999626019 instance=ExtResource("3_3q5j6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4475441, 0.35830688, 1.4503139)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5524559, 1.3583069, -2.549686)
+physics_material_override = SubResource("PhysicsMaterial_urak4")
+
+[node name="TimeBomb2" parent="." unique_id=1810194879 instance=ExtResource("3_3q5j6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5524559, 1.3583069, -4.549686)
+physics_material_override = SubResource("PhysicsMaterial_urak4")
+
+[node name="TimeBomb3" parent="." unique_id=168694722 instance=ExtResource("3_3q5j6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5524559, 1.3583069, -6.549686)
 physics_material_override = SubResource("PhysicsMaterial_urak4")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=2057979396]

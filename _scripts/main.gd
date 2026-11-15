@@ -6,10 +6,20 @@ extends Node
 @onready var survival: Label = $HUD/survival
 @export var office_environment: Node3D
 
+var hiding_spots
+var time_bombs : Array
+
+var is_dead : bool = false
+
 
 func _ready() -> void:
 	camera = player.get_node("Camera")
-
+	hiding_spots = $office_environment/HidingSpots.get_children()
+	
+	for child in get_children():
+		if child.name.contains("TimeBomb") and child is RigidBody3D:
+			time_bombs.append(child)
+	
 @export var throwable_scene: PackedScene
 @export var throw_force: float = 20.0
 @onready var camera: Camera3D = player.get_node("Camera")
@@ -31,7 +41,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		var from = camera.project_ray_origin(event.position)
 		var to = from + camera.project_ray_normal(event.position) * RAY_LENGTH
 		
-		var space_state = $Level.get_world_3d().get_direct_space_state()
+		var space_state = $office_environment.get_world_3d().get_direct_space_state()
 		
 		var query = PhysicsRayQueryParameters3D.create(from, to)
 		query.collide_with_areas = true
@@ -39,7 +49,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		if result:
 			var collision_object = result.collider
 			print(collision_object.name)
-			if collision_object is RigidBody3D and collision_object.name == "TimeBomb":
+			if collision_object is RigidBody3D and collision_object.name.contains("TimeBomb"):
 				held_object = collision_object.pickup($SubViewportContainer.get_node("SubViewport"))
 				%rewind.visible = true
 	
@@ -82,7 +92,7 @@ func throw_object(force: bool = true) -> void:
 	
 func _on_child_entered_tree(node: Node) -> void:
 	# stolen from above :E
-	if node is RigidBody3D and node.name == "TimeBomb":
+	if node is RigidBody3D and node.name.contains("TimeBomb"):
 		print("new bomb found")
 		if !node.is_connected("death",office_environment._on_death):
 			node.death.connect(office_environment._on_death)
@@ -90,15 +100,42 @@ func _on_child_entered_tree(node: Node) -> void:
 			node.death.connect(_on_death)
 
 func _on_death(node):
-	await throw_object(false)
-	set_process(false)
-	player.release_mouse()
-	player.queue_free() #lmao
-	for child in get_children():
-		if child.name == "TimeBomb" && child != node:
-			# can't worry about overlapping bombs if overlapping bombs.... dont exist
-			child.queue_free()
-	$HUD/ColorRect.visible = true
-	%AnimationPlayer.play("fade_white")
-	await %AnimationPlayer.animation_finished
-	get_tree().change_scene_to_file("res://_scenes/death.tscn")
+	if is_dead == false:
+		is_dead = true
+		await throw_object(false)
+		set_process(false)
+		player.release_mouse()
+		player.queue_free() # lmao
+		for child in get_children():
+			if child.name.contains("TimeBomb") && child != node:
+				# can't worry about overlapping bombs if overlapping bombs.... dont exist
+				child.queue_free()
+
+		await get_tree().physics_frame
+		$HUD/ColorRect.visible = true
+		%AnimationPlayer.play("fade_white")
+		await %AnimationPlayer.animation_finished
+		get_tree().change_scene_to_file("res://_scenes/death.tscn")
+
+func is_bomb_too_close(pos : Vector3) -> bool:
+	var closest_distance = 999999
+	
+	for bomb in time_bombs:
+		if bomb.position.distance_to(pos) < closest_distance:
+			closest_distance = bomb.position.distance_to(pos)
+			
+	return closest_distance < 15
+	
+func request_disappear(bomb : Node3D):
+	print("disappearing")
+	var found = false
+	var spot
+	
+	while not found:
+		spot = hiding_spots[randi_range(0, hiding_spots.size() - 1)]
+		if not is_bomb_too_close(spot.position):
+			found = true
+	
+	bomb.global_position = spot.global_position
+	bomb.global_rotation = spot.global_rotation
+	

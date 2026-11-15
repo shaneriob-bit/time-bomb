@@ -100,3 +100,16 @@ material = SubResource("StandardMaterial3D_nw23d")
 unique_name_in_owner = true
 root_node = NodePath("../..")
 libraries/ = SubResource("AnimationLibrary_jwr0q")
+
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="." unique_id=842625151]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.064622045, 0)
+aabb = AABB(-0.08950096, -0.06767696, -0.219902, 0.17900193, 0.13535392, 0.439804)
+
+[node name="DisappearTimer" type="Timer" parent="." unique_id=1701981403]
+wait_time = 30.0
+one_shot = true
+autostart = true
+
+[connection signal="screen_entered" from="VisibleOnScreenNotifier3D" to="." method="_on_visible_on_screen_notifier_3d_screen_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier3D" to="." method="_on_visible_on_screen_notifier_3d_screen_exited"]
+[connection signal="timeout" from="DisappearTimer" to="." method="_on_disappear_timer_timeout"]
