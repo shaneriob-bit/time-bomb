@@ -16,6 +16,7 @@ const BOMB_DISAPPEAR = preload("uid://1uqmppr5lo2b")
 
 var raycast : RayCast3D
 
+var disappear_count = 0
 
 func _ready() -> void:
 	camera = player.get_node("Camera")
@@ -59,7 +60,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	
 	if event.is_action_pressed("rewind"):
 		if held_object:
-			held_object.reverse = -4
+			held_object.reverse = -5
 	if event.is_action_released("rewind"):
 		if held_object:
 			held_object.reverse = 1
@@ -158,8 +159,10 @@ func request_disappear(bomb : Node3D):
 		bomb.global_position = spot.global_position
 		bomb.global_rotation = spot.global_rotation
 		
+		bomb.freeze = true
+		
 		can_disappear = false
-		$DisappearTimer.wait_time = randf_range(45, 65)
+		$DisappearTimer.wait_time = 60 - (10 * disappear_count)
 		$DisappearTimer.start()
 
 
