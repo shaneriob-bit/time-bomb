@@ -37,9 +37,12 @@ var held_object = null
 
 const RAY_LENGTH = 10
 
+var timeleft:int = 300
+
 func _process(delta):
 	timesincestart += delta
-	survival.text = ("0" if timesincestart < 540 else "") + str(int(timesincestart/60)) + ":" + ("0" if int(timesincestart) % 60 < 10 else "") + str(int(timesincestart) % 60)
+	timeleft = 300 - timesincestart
+	survival.text = ("0" if timeleft < 540 else "") + str(int(timeleft/60)) + ":" + ("0" if int(timeleft) % 60 < 10 else "") + str(int(timeleft) % 60)
 	if timesincestart >= 300:
 		player.release_mouse()
 		get_tree().change_scene_to_file("res://_scenes/win.tscn")
