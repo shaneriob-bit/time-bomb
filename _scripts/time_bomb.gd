@@ -5,7 +5,6 @@ extends RigidBody3D
 
 @onready var reverse: int = 1 # changes to -1 if reversing
 @onready var candie: bool = true
-
 var main
 
 var on_screen : bool = false

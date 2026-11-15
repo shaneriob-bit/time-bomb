@@ -1,0 +1,98 @@
+[gd_scene format=3 uid="uid://1uqmppr5lo2b"]
+
+[ext_resource type="AudioStream" uid="uid://nmg44i1gl3r" path="res://_assets/audio/bomb disappear.wav" id="1_0kb42"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nw23d"]
+transparency = 1
+albedo_color = Color(1, 0.9372549, 0.43529412, 1)
+
+[sub_resource type="Animation" id="Animation_y2jr5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:material_override:albedo_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 0.9372549, 0.43529412, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_0kb42"]
+resource_name = "expode"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.0666667),
+"transitions": PackedFloat32Array(1, 2.378413),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:material_override:albedo_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.4, 1),
+"transitions": PackedFloat32Array(1, 8.282115),
+"update": 0,
+"values": [Color(1, 0.9372549, 0.43529412, 1), Color(1, 0.9372549, 0.43529412, 0)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("..")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.6),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vsa77"]
+_data = {
+&"RESET": SubResource("Animation_y2jr5"),
+&"expode": SubResource("Animation_0kb42")
+}
+
+[node name="bomb_disappear" type="Node3D" unique_id=329719938]
+top_level = true
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="." unique_id=852011896]
+transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_nw23d")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CSGSphere3D" unique_id=406169760]
+libraries/ = SubResource("AnimationLibrary_vsa77")
+autoplay = &"expode"
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=144805066]
+stream = ExtResource("1_0kb42")
+volume_db = 40.0
+autoplay = true

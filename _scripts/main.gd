@@ -12,6 +12,7 @@ var time_bombs : Array
 var can_disappear : bool = false
 
 var is_dead : bool = false
+const BOMB_DISAPPEAR = preload("uid://1uqmppr5lo2b")
 
 
 func _ready() -> void:
@@ -148,6 +149,10 @@ func request_disappear(bomb : Node3D):
 			if count > 30:
 				printerr("Unable to find hiding spot")
 				break
+		
+		var disappeareffect = BOMB_DISAPPEAR.instantiate()
+		disappeareffect.global_position = bomb.global_position
+		add_child(disappeareffect)
 		
 		bomb.global_position = spot.global_position
 		bomb.global_rotation = spot.global_rotation
