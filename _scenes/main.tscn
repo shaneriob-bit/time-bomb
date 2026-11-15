@@ -129,8 +129,80 @@ transform = Transform3D(-5.9604645e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, 
 [node name="HidingSpot3" parent="office_environment/HidingSpots" unique_id=1278525959 instance=ExtResource("5_ce27d")]
 transform = Transform3D(0.9659257, 0, 0.25881907, 0, 1, 0, -0.25881907, 0, 0.9659257, -14.392492, 0.93896186, 8.104616)
 
+[node name="HidingSpot11" parent="office_environment/HidingSpots" unique_id=19445794 instance=ExtResource("5_ce27d")]
+transform = Transform3D(0.9955393, 0, -0.09434697, 0, 1, 0, 0.09434697, 0, 0.9955393, -1.3136269, 2.6958559, -6.310954)
+
+[node name="HidingSpot12" parent="office_environment/HidingSpots" unique_id=1480593346 instance=ExtResource("5_ce27d")]
+transform = Transform3D(0.9955393, 0, -0.09434697, 0, 1, 0, 0.09434697, 0, 0.9955393, 5.2135267, 1.1895068, -6.310954)
+
+[node name="HidingSpot29" parent="office_environment/HidingSpots" unique_id=625221384 instance=ExtResource("5_ce27d")]
+transform = Transform3D(-0.094347015, 0, -0.9955393, 0, 1, 0, 0.9955393, 0, -0.094347015, 7.2135267, 1.1895068, -7.8806915)
+
+[node name="HidingSpot30" parent="office_environment/HidingSpots" unique_id=2058797170 instance=ExtResource("5_ce27d")]
+transform = Transform3D(-0.094347015, 0, -0.9955393, 0, 1, 0, 0.9955393, 0, -0.094347015, 9.702075, 1.1895068, -7.0334277)
+
+[node name="HidingSpot13" parent="office_environment/HidingSpots" unique_id=1152612675 instance=ExtResource("5_ce27d")]
+transform = Transform3D(0.9955393, 0, -0.09434697, 0, 1, 0, 0.09434697, 0, 0.9955393, 5.2135267, 1.1895068, -9.310954)
+
+[node name="HidingSpot14" parent="office_environment/HidingSpots" unique_id=221897688 instance=ExtResource("5_ce27d")]
+transform = Transform3D(0.9955393, 0, -0.09434697, 0, 1, 0, 0.09434697, 0, 0.9955393, 7.01567, 0.78809893, -10.870711)
+
+[node name="HidingSpot15" parent="office_environment/HidingSpots" unique_id=608331119 instance=ExtResource("5_ce27d")]
+transform = Transform3D(-0.9768036, 0, -0.2141369, 0, 1, 0, 0.2141369, 0, -0.9768036, 7.244072, 0.78809893, -19.870712)
+
+[node name="HidingSpot16" parent="office_environment/HidingSpots" unique_id=590343719 instance=ExtResource("5_ce27d")]
+transform = Transform3D(-0.9768036, 0, -0.2141369, 0, 1, 0, 0.2141369, 0, -0.9768036, 19.363127, 1.2356416, -19.870712)
+
+[node name="HidingSpot17" parent="office_environment/HidingSpots" unique_id=317214477 instance=ExtResource("5_ce27d")]
+transform = Transform3D(-0.9889373, 0, 0.14833349, 0, 1, 0, -0.14833349, 0, -0.9889373, 19.363127, 1.2356416, -17.870712)
+
+[node name="HidingSpot18" parent="office_environment/HidingSpots" unique_id=2093082799 instance=ExtResource("5_ce27d")]
+transform = Transform3D(0.11267668, 0, -0.9936317, 0, 1, 0, 0.9936317, 0, 0.11267668, 17.363127, 1.2356416, -21.870712)
+
+[node name="HidingSpot19" parent="office_environment/HidingSpots" unique_id=1265922009 instance=ExtResource("5_ce27d")]
+transform = Transform3D(0.6229293, 0, 0.7822781, 0, 1, 0, -0.7822781, 0, 0.6229293, 17.542957, 0.796649, -19.691587)
+
+[node name="HidingSpot20" parent="office_environment/HidingSpots" unique_id=198007262 instance=ExtResource("5_ce27d")]
+transform = Transform3D(0.6229293, 0, 0.7822781, 0, 1, 0, -0.7822781, 0, 0.6229293, 18.210629, 0.796649, -12.691587)
+
+[node name="HidingSpot21" parent="office_environment/HidingSpots" unique_id=549665173 instance=ExtResource("5_ce27d")]
+transform = Transform3D(0.6229293, 0, 0.7822781, 0, 1, 0, -0.7822781, 0, 0.6229293, 18.66918, 0.796649, -7.461616)
+
+[node name="HidingSpot22" parent="office_environment/HidingSpots" unique_id=1407769648 instance=ExtResource("5_ce27d")]
+transform = Transform3D(-0.9994616, 0, -0.032815672, 0, 1, 0, 0.032815672, 0, -0.9994616, 19.314472, 1.2549651, -7.1127615)
+
+[node name="HidingSpot23" parent="office_environment/HidingSpots" unique_id=1295001315 instance=ExtResource("5_ce27d")]
+transform = Transform3D(-0.9994616, 0, -0.032815672, 0, 1, 0, 0.032815672, 0, -0.9994616, 19.314472, 1.2549651, -1.2319036)
+
+[node name="HidingSpot24" parent="office_environment/HidingSpots" unique_id=645797052 instance=ExtResource("5_ce27d")]
+transform = Transform3D(-0.9994616, 0, -0.032815672, 0, 1, 0, 0.032815672, 0, -0.9994616, 19.314472, 1.2549651, 3.7680964)
+
+[node name="HidingSpot25" parent="office_environment/HidingSpots" unique_id=269592133 instance=ExtResource("5_ce27d")]
+transform = Transform3D(0.52815, 0, -0.84915125, 0, 1, 0, 0.84915125, 0, 0.52815, 16.314472, 1.2549651, 2.7680964)
+
+[node name="HidingSpot26" parent="office_environment/HidingSpots" unique_id=379955620 instance=ExtResource("5_ce27d")]
+transform = Transform3D(0.52815, 0, -0.84915125, 0, 1, 0, 0.84915125, 0, 0.52815, 5.5697975, 1.2549651, 2.7680964)
+
+[node name="HidingSpot27" parent="office_environment/HidingSpots" unique_id=1321664584 instance=ExtResource("5_ce27d")]
+transform = Transform3D(0.97819513, 0, 0.20768926, 0, 1, 0, -0.20768926, 0, 0.97819513, 5.5697975, 1.2549651, 1.1087142)
+
+[node name="HidingSpot28" parent="office_environment/HidingSpots" unique_id=1025951715 instance=ExtResource("5_ce27d")]
+transform = Transform3D(0.05256313, 0, 0.99861777, 0, 1, 0, -0.99861777, 0, 0.05256313, 9.5697975, 1.2549651, 4.6693773)
+
 [node name="HidingSpot4" parent="office_environment/HidingSpots" unique_id=1950543802 instance=ExtResource("5_ce27d")]
 transform = Transform3D(0.9458182, 0, -0.32469633, 0, 1, 0, 0.32469633, 0, 0.9458182, -14.609272, 0.9191364, 5.120524)
+
+[node name="HidingSpot31" parent="office_environment/HidingSpots" unique_id=1958097860 instance=ExtResource("5_ce27d")]
+transform = Transform3D(0.4391995, 0, -0.8983895, 0, 1, 0, 0.8983895, 0, 0.4391995, -14.609272, 1.3112878, -3.879476)
+
+[node name="HidingSpot32" parent="office_environment/HidingSpots" unique_id=86258630 instance=ExtResource("5_ce27d")]
+transform = Transform3D(-0.06883684, 0, -0.99762785, 0, 1, 0, 0.99762785, 0, -0.06883684, -12.609272, 1.3112878, -3.879476)
+
+[node name="HidingSpot34" parent="office_environment/HidingSpots" unique_id=1521910128 instance=ExtResource("5_ce27d")]
+transform = Transform3D(-0.06883684, 0, -0.99762785, 0, 1, 0, 0.99762785, 0, -0.06883684, -12.609272, 0.7000233, -6.30459)
+
+[node name="HidingSpot33" parent="office_environment/HidingSpots" unique_id=250276411 instance=ExtResource("5_ce27d")]
+transform = Transform3D(-0.06883684, 0, -0.99762785, 0, 1, 0, 0.99762785, 0, -0.06883684, -10.609272, 1.3112878, -3.879476)
 
 [node name="HidingSpot5" parent="office_environment/HidingSpots" unique_id=785892269 instance=ExtResource("5_ce27d")]
 transform = Transform3D(0.024128616, 0, 0.9997089, 0, 1, 0, -0.9997089, 0, 0.024128616, 0.036753207, 0.033390477, 12.792387)
@@ -142,7 +214,58 @@ transform = Transform3D(0.69933254, 0, 0.71479654, 0, 1, 0, -0.71479654, 0, 0.69
 transform = Transform3D(0.8543817, 0, -0.5196461, 0, 1, 0, 0.5196461, 0, 0.8543817, 1.3839898, 0.033390477, 26.689491)
 
 [node name="HidingSpot9" parent="office_environment/HidingSpots" unique_id=1279440575 instance=ExtResource("5_ce27d")]
-transform = Transform3D(-0.87721765, 0, -0.48009312, 0, 1, 0, 0.48009312, 0, -0.87721765, 3.222995, 1.1953182, 24.154375)
+transform = Transform3D(0.7230699, 0, 0.69077504, 0, 1, 0, -0.69077504, 0, 0.7230699, -1.777005, 1.1953182, 28.154375)
+
+[node name="HidingSpot35" parent="office_environment/HidingSpots" unique_id=177325976 instance=ExtResource("5_ce27d")]
+transform = Transform3D(-0.99785334, 0, 0.065490305, 0, 1, 0, -0.065490305, 0, -0.99785334, -2.777005, 1.1953182, 26.154375)
+
+[node name="HidingSpot36" parent="office_environment/HidingSpots" unique_id=570008211 instance=ExtResource("5_ce27d")]
+transform = Transform3D(0.7518976, 0, 0.6592802, 0, 1, 0, -0.6592802, 0, 0.7518976, -13.777005, 1.1953182, 26.154375)
+
+[node name="HidingSpot37" parent="office_environment/HidingSpots" unique_id=1577896332 instance=ExtResource("5_ce27d")]
+transform = Transform3D(0.7518976, 0, 0.6592802, 0, 1, 0, -0.6592802, 0, 0.7518976, -13.777005, 1.1953182, 28.154375)
+
+[node name="HidingSpot38" parent="office_environment/HidingSpots" unique_id=20340311 instance=ExtResource("5_ce27d")]
+transform = Transform3D(0.7518976, 0, 0.6592802, 0, 1, 0, -0.6592802, 0, 0.7518976, -11.469422, 0.67967165, 20.154375)
+
+[node name="HidingSpot39" parent="office_environment/HidingSpots" unique_id=337060279 instance=ExtResource("5_ce27d")]
+transform = Transform3D(0.7518976, 0, 0.6592802, 0, 1, 0, -0.6592802, 0, 0.7518976, -11.918557, 0.6951103, 14.240565)
+
+[node name="HidingSpot40" parent="office_environment/HidingSpots" unique_id=1998781180 instance=ExtResource("5_ce27d")]
+transform = Transform3D(0.44221032, 0, -0.8969115, 0, 1, 0, 0.8969115, 0, 0.44221032, -7.1734138, 0.6951103, 16.240566)
+
+[node name="HidingSpot41" parent="office_environment/HidingSpots" unique_id=1557456756 instance=ExtResource("5_ce27d")]
+transform = Transform3D(-0.94690204, 0, 0.32152227, 0, 1, 0, -0.32152227, 0, -0.94690204, -7.1734138, 0.6951103, 18.240566)
+
+[node name="HidingSpot42" parent="office_environment/HidingSpots" unique_id=1586399798 instance=ExtResource("5_ce27d")]
+transform = Transform3D(0.2990288, 0, 0.9542441, 0, 1, 0, -0.9542441, 0, 0.2990288, -8.956075, 0.6951103, 20.240566)
+
+[node name="HidingSpot43" parent="office_environment/HidingSpots" unique_id=1704400434 instance=ExtResource("5_ce27d")]
+transform = Transform3D(0.2990288, 0, 0.9542441, 0, 1, 0, -0.9542441, 0, 0.2990288, 0.043925285, 0.6951103, 13.543734)
+
+[node name="HidingSpot44" parent="office_environment/HidingSpots" unique_id=612567681 instance=ExtResource("5_ce27d")]
+transform = Transform3D(-0.7360885, 0, -0.67688525, 0, 1, 0, 0.67688525, 0, -0.7360885, 3.0439253, 0.028946817, 12.543734)
+
+[node name="HidingSpot45" parent="office_environment/HidingSpots" unique_id=1456764919 instance=ExtResource("5_ce27d")]
+transform = Transform3D(-0.7360885, 0, -0.67688525, 0, 1, 0, 0.67688525, 0, -0.7360885, 13.487819, 1.3393309, 12.543734)
+
+[node name="HidingSpot46" parent="office_environment/HidingSpots" unique_id=1148594121 instance=ExtResource("5_ce27d")]
+transform = Transform3D(-0.7360885, 0, -0.67688525, 0, 1, 0, 0.67688525, 0, -0.7360885, 13.487819, 1.3393309, 17.543734)
+
+[node name="HidingSpot47" parent="office_environment/HidingSpots" unique_id=1261338749 instance=ExtResource("5_ce27d")]
+transform = Transform3D(-0.7360885, 0, -0.67688525, 0, 1, 0, 0.67688525, 0, -0.7360885, 13.487819, 1.3393309, 24.543734)
+
+[node name="HidingSpot48" parent="office_environment/HidingSpots" unique_id=1352136968 instance=ExtResource("5_ce27d")]
+transform = Transform3D(0.041863024, 0, 0.9991233, 0, 1, 0, -0.9991233, 0, 0.041863024, 7.4878187, 2.9643517, 25.503105)
+
+[node name="HidingSpot49" parent="office_environment/HidingSpots" unique_id=1747156487 instance=ExtResource("5_ce27d")]
+transform = Transform3D(0.041863024, 0, 0.9991233, 0, 1, 0, -0.9991233, 0, 0.041863024, 7.4878187, 2.0878496, 25.503105)
+
+[node name="HidingSpot50" parent="office_environment/HidingSpots" unique_id=360878534 instance=ExtResource("5_ce27d")]
+transform = Transform3D(0.041863024, 0, 0.9991233, 0, 1, 0, -0.9991233, 0, 0.041863024, 7.4878187, 2.5270364, 25.503105)
+
+[node name="HidingSpot10" parent="office_environment/HidingSpots" unique_id=1153089088 instance=ExtResource("5_ce27d")]
+transform = Transform3D(0.7230699, 0, 0.69077504, 0, 1, 0, -0.69077504, 0, 0.7230699, -4.904802, 0.7419851, 26.381842)
 
 [node name="HidingSpot8" parent="office_environment/HidingSpots" unique_id=636968290 instance=ExtResource("5_ce27d")]
 transform = Transform3D(0.8543817, 0, -0.5196461, 0, 1, 0, 0.5196461, 0, 0.8543817, 0.98781776, 0.7921649, 26.46385)
@@ -178,6 +301,7 @@ stretch_mode = 4
 
 [node name="rewind" type="Label" parent="HUD" unique_id=245944596]
 unique_name_in_owner = true
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5

@@ -167,7 +167,7 @@ func request_disappear(bomb : Node3D):
 		bomb.freeze = true
 		
 		can_disappear = false
-		var t = 60 - (15 * disappear_count)
+		var t = 45 - (5 * disappear_count)
 		if t < 0:
 			t = 15
 		$DisappearTimer.wait_time = t
