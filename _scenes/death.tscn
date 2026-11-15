@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dgsac3hf6oavq"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ia55b"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_7ag0t"]
+sky_material = SubResource("ProceduralSkyMaterial_ia55b")
+
+[sub_resource type="Environment" id="Environment_eqp8a"]
+background_mode = 2
+sky = SubResource("Sky_7ag0t")
+
+[node name="death" type="Node3D" unique_id=26096098]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=605828799]
+environment = SubResource("Environment_eqp8a")

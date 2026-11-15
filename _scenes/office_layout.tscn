@@ -19,6 +19,7 @@ size = Vector3(34.87683, 0.35961914, 23.03062)
 
 [node name="CSGBox3D10" type="CSGBox3D" parent="." unique_id=1964687628]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9704418, 3.3553329, 11.965437)
+use_collision = true
 size = Vector3(40.48359, 6.5207825, 0.30371094)
 material = ExtResource("2_5ksdh")
 
@@ -34,41 +35,49 @@ size = Vector3(3.2871094, 4.17334, 1)
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="." unique_id=666135488]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.77965, 3.3553329, -18.673504)
+use_collision = true
 size = Vector3(14.635254, 6.5207825, 0.30371094)
 material = ExtResource("2_5ksdh")
 
 [node name="CSGBox3D9" type="CSGBox3D" parent="." unique_id=178543161]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.174145, 3.3553329, -22.541641)
+use_collision = true
 size = Vector3(23.998535, 6.5207825, 0.30371094)
 material = ExtResource("2_5ksdh")
 
 [node name="CSGBox3D14" type="CSGBox3D" parent="." unique_id=355391891]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.449602, 3.3553329, 28.733288)
+use_collision = true
 size = Vector3(24.601013, 6.5207825, 0.30371094)
 material = ExtResource("2_5ksdh")
 
 [node name="CSGBox3D16" type="CSGBox3D" parent="." unique_id=1588965226]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.740541, 3.3553329, 25.9106)
+use_collision = true
 size = Vector3(15.631683, 6.5207825, 0.30371094)
 material = ExtResource("2_5ksdh")
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="." unique_id=1313808395]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -17.030779, 3.3553329, 10.601345)
+use_collision = true
 size = Vector3(38.211548, 6.5207825, 0.30371094)
 material = ExtResource("2_5ksdh")
 
 [node name="CSGBox3D12" type="CSGBox3D" parent="." unique_id=1517964878]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -15.500076, 3.3553329, -14.432137)
+use_collision = true
 size = Vector3(11.592438, 6.5207825, 0.30371094)
 material = ExtResource("2_5ksdh")
 
 [node name="CSGBox3D17" type="CSGBox3D" parent="." unique_id=1415770413]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 14.480216, 3.3553329, 19.577057)
+use_collision = true
 size = Vector3(15.303635, 6.5207825, 0.30371094)
 material = ExtResource("2_5ksdh")
 
 [node name="CSGBox3D6" type="CSGBox3D" parent="." unique_id=764235991]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.5163487, 3.3553329, -6.045138)
+use_collision = true
 size = Vector3(35.69378, 6.5207825, 0.30371094)
 material = ExtResource("2_5ksdh")
 
@@ -84,6 +93,7 @@ size = Vector3(10.335541, 4.17334, 1)
 
 [node name="CSGBox3D7" type="CSGBox3D" parent="." unique_id=1695794084]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -11.1732235, 3.3553329, -8.478929)
+use_collision = true
 size = Vector3(19.332016, 6.5207825, 0.30371094)
 material = ExtResource("2_5ksdh")
 
@@ -94,11 +104,13 @@ size = Vector3(4.248047, 4.17334, 1)
 
 [node name="CSGBox3D8" type="CSGBox3D" parent="." unique_id=905033857]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -13.002317, 3.3553329, 1.5920552)
+use_collision = true
 size = Vector3(9.79248, 6.5207825, 0.30371094)
 material = ExtResource("2_5ksdh")
 
 [node name="CSGBox3D11" type="CSGBox3D" parent="." unique_id=624896716]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -8.212639, 3.3553329, 1.8286209)
+use_collision = true
 size = Vector3(20.563166, 6.5207825, 0.30371094)
 material = ExtResource("2_5ksdh")
 
@@ -114,11 +126,13 @@ size = Vector3(3.2871094, 4.17334, 1)
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="." unique_id=1564822457]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 20.768034, 3.3553329, -5.2368813)
+use_collision = true
 size = Vector3(34.65277, 6.5207825, 0.30371094)
 material = ExtResource("2_5ksdh")
 
 [node name="CSGBox3D15" type="CSGBox3D" parent="." unique_id=1939159128]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3.8029714, 3.3553329, 23.413624)
+use_collision = true
 size = Vector3(22.92797, 6.5207825, 0.30371094)
 material = ExtResource("2_5ksdh")
 
