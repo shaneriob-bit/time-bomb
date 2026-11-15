@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bbmi1wrml7ao0" path="res://_assets/furniture/table.tscn" id="1_jx3df"]
 [ext_resource type="Script" uid="uid://duxnictteqpxb" path="res://_scripts/main_menu.gd" id="1_tcb7q"]
 [ext_resource type="PackedScene" uid="uid://c344irfyn8q8f" path="res://_assets/timebomb model.tscn" id="2_fasvp"]
+[ext_resource type="AudioStream" uid="uid://bk086wj1q244q" path="res://_assets/audio/kaydence loser.mp3" id="2_q13kq"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fasvp"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -24,6 +25,11 @@ font_size = 93
 
 [node name="Node3D" type="Node3D" unique_id=1241781951]
 script = ExtResource("1_tcb7q")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=128058752]
+stream = ExtResource("2_q13kq")
+volume_db = -10.0
+autoplay = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=781398578]
 environment = SubResource("Environment_q13kq")
@@ -56,6 +62,7 @@ custom_maximum_size = Vector2(400, -1)
 layout_mode = 2
 text = "< Anomolous activity detected in area. >
 < Help arrives in 5 MINUTES. >
+< LMB to interact with bombs. >
 < Do not lose track of the TIME BOMBS. >"
 label_settings = SubResource("LabelSettings_nw23d")
 autowrap_mode = 2

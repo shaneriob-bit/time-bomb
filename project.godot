@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="TimeBomb"
-run/main_scene="uid://cam4qylhbxqoh"
+run/main_scene="uid://bow3j53gpa8sg"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
