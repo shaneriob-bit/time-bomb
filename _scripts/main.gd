@@ -9,6 +9,8 @@ extends Node
 var hiding_spots
 var time_bombs : Array
 
+var can_disappear : bool = false
+
 var is_dead : bool = false
 
 
@@ -26,7 +28,7 @@ func _ready() -> void:
 
 var held_object = null
 
-const RAY_LENGTH = 8
+const RAY_LENGTH = 10
 
 func _process(delta):
 	timesincestart += delta
@@ -37,21 +39,22 @@ func _unhandled_input(event: InputEvent) -> void:
 		throw_object()
 		
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-		player.capture_mouse()
-		var from = camera.project_ray_origin(event.position)
-		var to = from + camera.project_ray_normal(event.position) * RAY_LENGTH
-		
-		var space_state = $office_environment.get_world_3d().get_direct_space_state()
-		
-		var query = PhysicsRayQueryParameters3D.create(from, to)
-		query.collide_with_areas = true
-		var result = space_state.intersect_ray(query)
-		if result:
-			var collision_object = result.collider
-			print(collision_object.name)
-			if collision_object is RigidBody3D and collision_object.name.contains("TimeBomb"):
-				held_object = collision_object.pickup($SubViewportContainer.get_node("SubViewport"))
-				%rewind.visible = true
+		if held_object == null:
+			player.capture_mouse()
+			var from = camera.project_ray_origin(event.position)
+			var to = from + camera.project_ray_normal(event.position) * RAY_LENGTH
+			
+			var space_state = $office_environment.get_world_3d().get_direct_space_state()
+			
+			var query = PhysicsRayQueryParameters3D.create(from, to)
+			query.collide_with_areas = true
+			var result = space_state.intersect_ray(query)
+			if result:
+				var collision_object = result.collider
+				print(collision_object.name)
+				if collision_object is RigidBody3D and collision_object.name.contains("TimeBomb"):
+					held_object = collision_object.pickup($SubViewportContainer.get_node("SubViewport"))
+					%rewind.visible = true
 	
 	if event.is_action_pressed("rewind"):
 		if held_object:
@@ -89,6 +92,8 @@ func throw_object(force: bool = true) -> void:
 	if force:
 		# Apply a central impulse along the look vector
 		instance.apply_central_impulse(look_direction * throw_force)
+		
+	held_object = null
 	
 func _on_child_entered_tree(node: Node) -> void:
 	# stolen from above :E
@@ -127,20 +132,28 @@ func is_bomb_too_close(pos : Vector3) -> bool:
 	return closest_distance < 5
 	
 func request_disappear(bomb : Node3D):
-	print("disappearing")
-	var found = false
-	var spot
-	var count = 0
-	
-	while not found:
-		count += 1
-		spot = hiding_spots[randi_range(0, hiding_spots.size() - 1)]
-		if not is_bomb_too_close(spot.position):
-			found = true
+	if can_disappear:
+		print("disappearing")
+		var found = false
+		var spot
+		var count = 0
 		
-		if count > 30:
-			printerr("Unable to find hiding spot")
-	
-	bomb.global_position = spot.global_position
-	bomb.global_rotation = spot.global_rotation
-	
+		while not found:
+			count += 1
+			spot = hiding_spots[randi_range(0, hiding_spots.size() - 1)]
+			if not is_bomb_too_close(spot.position):
+				found = true
+			
+			if count > 30:
+				printerr("Unable to find hiding spot")
+				break
+		
+		bomb.global_position = spot.global_position
+		bomb.global_rotation = spot.global_rotation
+		
+		can_disappear = false
+		$DisappearTimer.start()
+
+
+func _on_disappear_timer_timeout() -> void:
+	can_disappear = true

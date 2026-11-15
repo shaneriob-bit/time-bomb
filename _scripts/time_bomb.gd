@@ -45,5 +45,7 @@ func _on_disappear_timer_timeout() -> void:
 
 func disappear():
 	disappear_ready = false
-	main.request_disappear(self)
-	freeze = true
+	if main.request_disappear(self):
+		freeze = true
+		
+	$DisappearTimer.start()

@@ -227,4 +227,9 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -16.
 [node name="clock3" parent="." unique_id=1343243638 instance=ExtResource("6_ce27d")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 14.2079735, 3.4890132, 11.782209)
 
+[node name="DisappearTimer" type="Timer" parent="." unique_id=1246016530]
+wait_time = 25.0
+autostart = true
+
 [connection signal="child_entered_tree" from="." to="." method="_on_child_entered_tree"]
+[connection signal="timeout" from="DisappearTimer" to="." method="_on_disappear_timer_timeout"]
