@@ -40,6 +40,9 @@ const RAY_LENGTH = 10
 func _process(delta):
 	timesincestart += delta
 	survival.text = ("0" if timesincestart < 540 else "") + str(int(timesincestart/60)) + ":" + ("0" if int(timesincestart) % 60 < 10 else "") + str(int(timesincestart) % 60)
+	if timesincestart >= 300:
+		pass
+		
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("throw"): # Configure "throw" in Project Settings > Input Map
