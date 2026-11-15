@@ -1,5 +1,8 @@
 [gd_scene format=3 uid="uid://dgsac3hf6oavq"]
 
+[ext_resource type="Shader" uid="uid://b1aon4fnss32k" path="res://_scenes/death.gdshader" id="1_7ag0t"]
+[ext_resource type="Script" uid="uid://d17itkkehbtex" path="res://_scripts/deathscreen.gd" id="2_eqp8a"]
+
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ia55b"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
 ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -11,7 +14,120 @@ sky_material = SubResource("ProceduralSkyMaterial_ia55b")
 background_mode = 2
 sky = SubResource("Sky_7ag0t")
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ia55b"]
+render_priority = 0
+shader = ExtResource("1_7ag0t")
+shader_parameter/background_color = Color(0.02, 0.04, 0.12, 1)
+shader_parameter/aspect_ratio = 1.0
+shader_parameter/density = 0.65539998341838
+shader_parameter/layer_parascale = 4
+shader_parameter/star_speed = Vector2(0.04, 0)
+shader_parameter/star_wave = Vector2(0.065, 0.05)
+shader_parameter/star_size = 3.0
+shader_parameter/star_rotate_speed = 0.5
+shader_parameter/twinkle_effect = 0.6
+shader_parameter/twinkle_speed = 0.3
+shader_parameter/pixelate_enabled = false
+shader_parameter/pixelate_count = 1000.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_7ag0t"]
+line_spacing = -8.695
+font_size = 33
+
+[sub_resource type="Animation" id="Animation_eqp8a"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_gcids"]
+resource_name = "fade up"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_81c5p"]
+_data = {
+&"RESET": SubResource("Animation_eqp8a"),
+&"fade up": SubResource("Animation_gcids")
+}
+
 [node name="death" type="Node3D" unique_id=26096098]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=605828799]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1558974220]
 environment = SubResource("Environment_eqp8a")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=785361251]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+light_color = Color(0.9544198, 0.9364552, 0.8466446, 1)
+light_energy = 0.75
+shadow_enabled = true
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1008432864]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.099682)
+current = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=393944213]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.056205)
+size = Vector3(26.800537, 12.875244, 1)
+material = SubResource("ShaderMaterial_ia55b")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1871822503]
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=352374481]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -71.0
+offset_top = -99.0
+offset_right = 71.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+text = "You
+Died"
+label_settings = SubResource("LabelSettings_7ag0t")
+horizontal_alignment = 1
+vertical_alignment = 1
+visible_characters = 8
+script = ExtResource("2_eqp8a")
+
+[node name="DeathTimer" type="Timer" parent="CanvasLayer/Label" unique_id=1811273702]
+unique_name_in_owner = true
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1671876311]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -5015.0
+offset_top = -4156.0
+offset_right = 5015.0
+offset_bottom = 4156.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/ColorRect" unique_id=1491999550]
+libraries/ = SubResource("AnimationLibrary_81c5p")
