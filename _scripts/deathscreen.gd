@@ -7,10 +7,26 @@ extends Label
 func _ready():
 	
 	visible_characters = 0
-	$DeathTimer.start(1.0)
+	%Button.visible = false
+	
+	%AnimationPlayer.play("fade")
+	$DeathTimer.start(2.0)
 	await $DeathTimer.timeout
 	
-	while(visible_characters <= 7):
+	while(visible_characters <= 9):
 		$DeathTimer.start(0.1)
 		await $DeathTimer.timeout
 		visible_characters += 1
+		
+	$DeathTimer.start(1.0)
+	await $DeathTimer.timeout
+	
+	while(visible_characters <= 20):
+		$DeathTimer.start(0.1)
+		await $DeathTimer.timeout
+		visible_characters += 1
+
+	$DeathTimer.start(1.0)
+	await $DeathTimer.timeout
+	
+	%Button.visible = true

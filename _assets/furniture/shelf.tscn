@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://d3dmuj1o6ahtf"]
+
+[ext_resource type="PackedScene" uid="uid://lkjbc8wrf24q" path="res://_assets/mesh/shelf.fbx" id="1_2ejks"]
+[ext_resource type="Material" uid="uid://b17fa82fd2gjd" path="res://_assets/materials/office furniture.tres" id="2_hn7dt"]
+
+[node name="shelf" unique_id=1704491692 instance=ExtResource("1_2ejks")]
+
+[node name="shelf" parent="." index="1" unique_id=1174252293]
+surface_material_override/0 = ExtResource("2_hn7dt")

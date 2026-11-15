@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dbqmm54o1a3ks"]
+
+[ext_resource type="PackedScene" uid="uid://bh76mni047w85" path="res://_assets/mesh/alarm clock.fbx" id="1_tswsy"]
+[ext_resource type="Material" uid="uid://b17fa82fd2gjd" path="res://_assets/materials/office furniture.tres" id="2_i5sdn"]
+
+[node name="alarm clock" unique_id=1625312352 instance=ExtResource("1_tswsy")]
+
+[node name="alarm clock" parent="." index="1" unique_id=1615111051]
+surface_material_override/0 = ExtResource("2_i5sdn")

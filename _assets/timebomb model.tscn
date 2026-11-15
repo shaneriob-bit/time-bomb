@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://c344irfyn8q8f"]
+
+[ext_resource type="PackedScene" uid="uid://cep8mrybbfn54" path="res://_assets/mesh/just the bomb.blend" id="1_vf1vk"]
+[ext_resource type="Script" uid="uid://5csit82mj3l7" path="res://_assets/timebomb_hands.gd" id="2_jvjms"]
+[ext_resource type="Material" uid="uid://dteqcfygw3mhk" path="res://_assets/materials/bomb.tres" id="2_sw760"]
+
+[node name="just the bomb" unique_id=2027146300 instance=ExtResource("1_vf1vk")]
+script = ExtResource("2_jvjms")
+
+[node name="bomb" parent="." index="0" unique_id=1320830907]
+surface_material_override/0 = ExtResource("2_sw760")
+
+[node name="watch face" parent="." index="3" unique_id=63113093]
+surface_material_override/0 = ExtResource("2_sw760")
+
+[node name="watch strap" parent="." index="4" unique_id=1968223186]
+surface_material_override/0 = ExtResource("2_sw760")
+
+[node name="watch strap_001" parent="." index="5" unique_id=1039206431]
+surface_material_override/0 = ExtResource("2_sw760")
+
+[node name="watch strap_002" parent="." index="6" unique_id=537843556]
+surface_material_override/0 = ExtResource("2_sw760")
+
+[node name="wicks" parent="." index="7" unique_id=237292646]
+surface_material_override/0 = ExtResource("2_sw760")
+
+[node name="Timer" type="Timer" parent="." index="8" unique_id=638521729]
+unique_name_in_owner = true
+wait_time = 0.5
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

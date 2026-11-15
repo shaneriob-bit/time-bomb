@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://c5nedhii8d1cg"]
+
+[ext_resource type="PackedScene" uid="uid://d2rydpflg6f6j" path="res://_assets/mesh/clock.fbx" id="1_ptmw7"]
+[ext_resource type="Material" uid="uid://b17fa82fd2gjd" path="res://_assets/materials/office furniture.tres" id="2_5clk7"]
+[ext_resource type="AudioStream" uid="uid://d2x88lutpb1rc" path="res://_assets/audio/wall clock.wav" id="3_5clk7"]
+
+[node name="clock" unique_id=302000284 instance=ExtResource("1_ptmw7")]
+
+[node name="clock" parent="." index="1" unique_id=815412634]
+transform = Transform3D(50, 0, 0, 0, 50, -2.1855694e-06, 0, 2.1855694e-06, 50, 0, 0, 0)
+surface_material_override/0 = ExtResource("2_5clk7")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="2" unique_id=1765851568]
+stream = ExtResource("3_5clk7")
+volume_db = 8.0
+unit_size = 2.0
+max_db = 6.0
+autoplay = true
+bus = &"clocks"

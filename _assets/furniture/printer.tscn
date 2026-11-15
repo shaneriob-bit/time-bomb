@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://sm7x6cqkb645"]
+
+[ext_resource type="PackedScene" uid="uid://1ib1wswcwww8" path="res://_assets/mesh/printer.fbx" id="1_ix4ow"]
+[ext_resource type="Material" uid="uid://b17fa82fd2gjd" path="res://_assets/materials/office furniture.tres" id="2_c4wn1"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ix4ow"]
+points = PackedVector3Array(-0.00927103, -0.009289772, 0.0176, 0.010658894, 0.009249689, 0.028123315, 0.0009964365, 0.0093, 0.028203811, -0.009179645, 0.0093, -0.0014038112, 0.0093, -0.009178143, -0.0013612193, 0.0093, 0.00927338, -0.0013612193, 0.010658894, -0.0054721828, 0.028123315, -0.009282025, -0.0093, -0.0015561904, -0.009179645, 0.0093, 0.026815593, -0.009180345, -0.005502752, 0.026816538, 0.00925531, -0.009129826, 0.01798513, 0.011073017, 0.009634919, 0.026820723, 0.0009967362, -0.0055096024, 0.028223125, 0.011073017, -0.0057032607, 0.026820723, -0.009143041, -0.0073245205, 0.024, 0.009293128, -0.0073245205, 0.024)
+
+[node name="printer" unique_id=977969730 instance=ExtResource("1_ix4ow")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="0" unique_id=270649677]
+transform = Transform3D(75, 0, 0, 0, -3.2783541e-06, 75, 0, -75, -3.2783541e-06, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=150596227]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 3.5527137e-15, 0, -3.5527137e-15, 0.99999994, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_ix4ow")
+
+[node name="Cube_009" parent="." index="1" unique_id=110963467]
+transform = Transform3D(75, 0, 0, 0, -3.2783541e-06, 75, 0, -75, -3.2783541e-06, 0, 0, 0)
+surface_material_override/0 = ExtResource("2_c4wn1")
+
+[node name="Cube_010" parent="." index="2" unique_id=343580830]
+transform = Transform3D(75, 0, 0, 0, -3.2783541e-06, 75, 0, -75, -3.2783541e-06, 0, 0, 0)
+surface_material_override/0 = ExtResource("2_c4wn1")

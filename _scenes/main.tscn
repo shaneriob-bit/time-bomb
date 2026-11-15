@@ -5,9 +5,14 @@
 [ext_resource type="PackedScene" uid="uid://kondycbfl2yw" path="res://_scenes/time_bomb.tscn" id="3_3q5j6"]
 [ext_resource type="PackedScene" uid="uid://4lpag8t4s1ra" path="res://_scenes/office_environment.tscn" id="4_lavtb"]
 [ext_resource type="Texture2D" uid="uid://ca841hl8cvkd4" path="res://_assets/sprites/crosshair_small.png" id="5_6bnj4"]
+[ext_resource type="PackedScene" uid="uid://c5nedhii8d1cg" path="res://_assets/furniture/clock.tscn" id="6_ce27d"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v4k5x"]
 albedo_color = Color(0.080783345, 0.080783345, 0.080783345, 1)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_urak4"]
+rough = true
+bounce = 0.25
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sa4u1"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -20,8 +25,49 @@ sky_material = SubResource("ProceduralSkyMaterial_sa4u1")
 background_mode = 2
 sky = SubResource("Sky_dmym1")
 
-[node name="Main" type="Node" unique_id=358332163]
+[sub_resource type="LabelSettings" id="LabelSettings_nw23d"]
+font_size = 41
+
+[sub_resource type="Animation" id="Animation_6bnj4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HUD/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ce27d"]
+resource_name = "fade_white"
+length = 4.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HUD/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1.8, 3.42),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_urak4"]
+_data = {
+&"RESET": SubResource("Animation_6bnj4"),
+&"fade_white": SubResource("Animation_ce27d")
+}
+
+[node name="Main" type="Node" unique_id=358332163 node_paths=PackedStringArray("office_environment")]
 script = ExtResource("1_x6rnu")
+office_environment = NodePath("office_environment")
 throwable_scene = ExtResource("3_3q5j6")
 throw_force = 6.0
 
@@ -39,6 +85,7 @@ speed = 4.0
 
 [node name="TimeBomb" parent="." unique_id=999626019 instance=ExtResource("3_3q5j6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4475441, 0.35830688, 1.4503139)
+physics_material_override = SubResource("PhysicsMaterial_urak4")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=2057979396]
 anchors_preset = 15
@@ -67,11 +114,28 @@ environment = SubResource("Environment_x6rnu")
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
 
 [node name="office_environment" parent="." unique_id=1981049581 instance=ExtResource("4_lavtb")]
-script = null
 
 [node name="HidingSpots" type="Node3D" parent="office_environment" unique_id=1074956599]
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=1985011821]
+
+[node name="rewind" type="Label" parent="HUD" unique_id=245944596]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -65.0
+offset_top = -72.0
+offset_right = 65.0
+offset_bottom = -49.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "[E] Rewind bomb"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="HUD" unique_id=1387086398]
 anchors_preset = 8
@@ -90,3 +154,42 @@ mouse_filter = 2
 texture = ExtResource("5_6bnj4")
 expand_mode = 1
 stretch_mode = 4
+
+[node name="survival" type="Label" parent="HUD" unique_id=2069651532]
+offset_left = 27.0
+offset_top = 21.0
+offset_right = 216.0
+offset_bottom = 90.0
+text = "00:00"
+label_settings = SubResource("LabelSettings_nw23d")
+
+[node name="ColorRect" type="ColorRect" parent="HUD" unique_id=1178819103]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1823.0
+offset_top = -991.0
+offset_right = 1823.0
+offset_bottom = 991.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="HUD/ColorRect" unique_id=1342088727]
+unique_name_in_owner = true
+root_node = NodePath("../../..")
+libraries/ = SubResource("AnimationLibrary_urak4")
+
+[node name="clock" parent="." unique_id=302000284 instance=ExtResource("6_ce27d")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -12.0968275, 3.5943108, -8.751089)
+
+[node name="clock2" parent="." unique_id=2040771325 instance=ExtResource("6_ce27d")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -16.908112, 3.9639497, 6.4526367)
+
+[node name="clock3" parent="." unique_id=1343243638 instance=ExtResource("6_ce27d")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 14.2079735, 3.4890132, 11.782209)
+
+[connection signal="child_entered_tree" from="." to="." method="_on_child_entered_tree"]
