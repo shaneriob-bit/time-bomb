@@ -6,120 +6,123 @@
 [node name="office layout" type="Node3D" unique_id=587130387]
 
 [node name="floor" type="CSGBox3D" parent="." unique_id=757183029]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5182362, 1.1920929e-07, 3.8153858)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5182362, 1.1920929e-07, -6.0562763)
 material_override = ExtResource("1_h68uy")
 use_collision = true
-size = Vector3(38.759766, 0.35961914, 55.548523)
+size = Vector3(38.759766, 0.35961914, 35.8052)
 
-[node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=935272271]
+[node name="floor2" type="CSGBox3D" parent="." unique_id=1447054084]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.42323112, 1.1920929e-07, 23.354218)
+material_override = ExtResource("1_h68uy")
 use_collision = true
+size = Vector3(34.87683, 0.35961914, 23.03062)
 
-[node name="CSGBox3D10" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1964687628]
+[node name="CSGBox3D10" type="CSGBox3D" parent="." unique_id=1964687628]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9704418, 3.3553329, 11.965437)
 size = Vector3(40.48359, 6.5207825, 0.30371094)
 material = ExtResource("2_5ksdh")
 
-[node name="Door" type="CSGBox3D" parent="CSGCombiner3D/CSGBox3D10" unique_id=374353230]
+[node name="Door" type="CSGBox3D" parent="CSGBox3D10" unique_id=374353230]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.9150076, -1.5866699, 9.536743e-07)
 operation = 2
 size = Vector3(6.4353027, 4.17334, 1)
 
-[node name="Door2" type="CSGBox3D" parent="CSGCombiner3D/CSGBox3D10" unique_id=173938184]
+[node name="Door2" type="CSGBox3D" parent="CSGBox3D10" unique_id=173938184]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.906493, -1.5866699, 9.536743e-07)
 operation = 2
 size = Vector3(3.2871094, 4.17334, 1)
 
-[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D" unique_id=666135488]
+[node name="CSGBox3D3" type="CSGBox3D" parent="." unique_id=666135488]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.77965, 3.3553329, -18.673504)
 size = Vector3(14.635254, 6.5207825, 0.30371094)
 material = ExtResource("2_5ksdh")
 
-[node name="CSGBox3D9" type="CSGBox3D" parent="CSGCombiner3D" unique_id=178543161]
+[node name="CSGBox3D9" type="CSGBox3D" parent="." unique_id=178543161]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.174145, 3.3553329, -22.541641)
 size = Vector3(23.998535, 6.5207825, 0.30371094)
 material = ExtResource("2_5ksdh")
 
-[node name="CSGBox3D14" type="CSGBox3D" parent="CSGCombiner3D" unique_id=355391891]
+[node name="CSGBox3D14" type="CSGBox3D" parent="." unique_id=355391891]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.449602, 3.3553329, 28.733288)
 size = Vector3(24.601013, 6.5207825, 0.30371094)
 material = ExtResource("2_5ksdh")
 
-[node name="CSGBox3D16" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1588965226]
+[node name="CSGBox3D16" type="CSGBox3D" parent="." unique_id=1588965226]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.740541, 3.3553329, 25.9106)
 size = Vector3(15.631683, 6.5207825, 0.30371094)
 material = ExtResource("2_5ksdh")
 
-[node name="CSGBox3D4" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1313808395]
+[node name="CSGBox3D4" type="CSGBox3D" parent="." unique_id=1313808395]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -17.030779, 3.3553329, 10.601345)
 size = Vector3(38.211548, 6.5207825, 0.30371094)
 material = ExtResource("2_5ksdh")
 
-[node name="CSGBox3D12" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1517964878]
+[node name="CSGBox3D12" type="CSGBox3D" parent="." unique_id=1517964878]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -15.500076, 3.3553329, -14.432137)
 size = Vector3(11.592438, 6.5207825, 0.30371094)
 material = ExtResource("2_5ksdh")
 
-[node name="CSGBox3D17" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1415770413]
+[node name="CSGBox3D17" type="CSGBox3D" parent="." unique_id=1415770413]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 14.480216, 3.3553329, 19.577057)
 size = Vector3(15.303635, 6.5207825, 0.30371094)
 material = ExtResource("2_5ksdh")
 
-[node name="CSGBox3D6" type="CSGBox3D" parent="CSGCombiner3D" unique_id=764235991]
+[node name="CSGBox3D6" type="CSGBox3D" parent="." unique_id=764235991]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.5163487, 3.3553329, -6.045138)
 size = Vector3(35.69378, 6.5207825, 0.30371094)
 material = ExtResource("2_5ksdh")
 
-[node name="Door" type="CSGBox3D" parent="CSGCombiner3D/CSGBox3D6" unique_id=520443964]
+[node name="Door" type="CSGBox3D" parent="CSGBox3D6" unique_id=520443964]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.353113, -1.5866699, 8.34465e-07)
 operation = 2
 size = Vector3(4.705078, 4.17334, 1)
 
-[node name="Door2" type="CSGBox3D" parent="CSGCombiner3D/CSGBox3D6" unique_id=1631906387]
+[node name="Door2" type="CSGBox3D" parent="CSGBox3D6" unique_id=1631906387]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.907017, -1.5866699, 2.3841858e-07)
 operation = 2
 size = Vector3(10.335541, 4.17334, 1)
 
-[node name="CSGBox3D7" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1695794084]
+[node name="CSGBox3D7" type="CSGBox3D" parent="." unique_id=1695794084]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -11.1732235, 3.3553329, -8.478929)
 size = Vector3(19.332016, 6.5207825, 0.30371094)
 material = ExtResource("2_5ksdh")
 
-[node name="Door" type="CSGBox3D" parent="CSGCombiner3D/CSGBox3D7" unique_id=1885022098]
+[node name="Door" type="CSGBox3D" parent="CSGBox3D7" unique_id=1885022098]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.2942324, -1.5866699, -9.536743e-07)
 operation = 2
 size = Vector3(4.248047, 4.17334, 1)
 
-[node name="CSGBox3D8" type="CSGBox3D" parent="CSGCombiner3D" unique_id=905033857]
+[node name="CSGBox3D8" type="CSGBox3D" parent="." unique_id=905033857]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -13.002317, 3.3553329, 1.5920552)
 size = Vector3(9.79248, 6.5207825, 0.30371094)
 material = ExtResource("2_5ksdh")
 
-[node name="CSGBox3D11" type="CSGBox3D" parent="CSGCombiner3D" unique_id=624896716]
+[node name="CSGBox3D11" type="CSGBox3D" parent="." unique_id=624896716]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -8.212639, 3.3553329, 1.8286209)
 size = Vector3(20.563166, 6.5207825, 0.30371094)
 material = ExtResource("2_5ksdh")
 
-[node name="Door" type="CSGBox3D" parent="CSGCombiner3D/CSGBox3D11" unique_id=2065769824]
+[node name="Door" type="CSGBox3D" parent="CSGBox3D11" unique_id=2065769824]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7465847, -1.5866699, 0)
 operation = 2
 size = Vector3(3.2871094, 4.17334, 1)
 
-[node name="Door2" type="CSGBox3D" parent="CSGCombiner3D/CSGBox3D11" unique_id=799073274]
+[node name="Door2" type="CSGBox3D" parent="CSGBox3D11" unique_id=799073274]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8215933, -1.5866699, 0)
 operation = 2
 size = Vector3(3.2871094, 4.17334, 1)
 
-[node name="CSGBox3D5" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1564822457]
+[node name="CSGBox3D5" type="CSGBox3D" parent="." unique_id=1564822457]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 20.768034, 3.3553329, -5.2368813)
 size = Vector3(34.65277, 6.5207825, 0.30371094)
 material = ExtResource("2_5ksdh")
 
-[node name="CSGBox3D15" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1939159128]
+[node name="CSGBox3D15" type="CSGBox3D" parent="." unique_id=1939159128]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3.8029714, 3.3553329, 23.413624)
 size = Vector3(22.92797, 6.5207825, 0.30371094)
 material = ExtResource("2_5ksdh")
 
-[node name="Door" type="CSGBox3D" parent="CSGCombiner3D/CSGBox3D15" unique_id=1634553807]
+[node name="Door" type="CSGBox3D" parent="CSGBox3D15" unique_id=1634553807]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.8188095, -1.5866699, 4.7683716e-07)
 operation = 2
 size = Vector3(3.2871094, 4.17334, 1)
